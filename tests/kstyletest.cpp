@@ -44,7 +44,7 @@ void showDialog()
     QScopedPointer<QDialog> dialog(new QDialog);
     dialog->setLayout(new QVBoxLayout);
 
-    QDialogButtonBox* box = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, dialog.data());
+    QDialogButtonBox *box = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, dialog.data());
     QObject::connect(box, SIGNAL(accepted()), dialog.data(), SLOT(accept()));
     QObject::connect(box, SIGNAL(rejected()), dialog.data(), SLOT(reject()));
 
@@ -55,7 +55,7 @@ void showDialog()
     dialog->exec();
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     app.setStyle(new KStyle);
@@ -63,7 +63,7 @@ int main(int argc, char** argv)
     QWidget w;
     w.setLayout(new QVBoxLayout);
 
-    QPushButton* showDialogButton = new QPushButton(QLatin1Literal("Dialog"), &w);
+    QPushButton *showDialogButton = new QPushButton(QLatin1Literal("Dialog"), &w);
     QObject::connect(showDialogButton, &QPushButton::clicked, &showDialog);
     w.layout()->addWidget(showDialogButton);
     w.resize(200, 200);

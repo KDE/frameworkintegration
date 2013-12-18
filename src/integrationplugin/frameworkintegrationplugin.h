@@ -35,11 +35,14 @@ public:
     virtual void saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result);
     virtual void saveDontShowAgainContinue(const QString &dontShowAgainName);
     virtual void enableAllMessages();
-    virtual void enableMessage(const QString& dontShowAgainName);
-    virtual void setConfig(KConfig *cfg) { KMessageBox_againConfig = cfg; }
+    virtual void enableMessage(const QString &dontShowAgainName);
+    virtual void setConfig(KConfig *cfg)
+    {
+        KMessageBox_againConfig = cfg;
+    }
 
 private:
-    KConfig* KMessageBox_againConfig;
+    KConfig *KMessageBox_againConfig;
 };
 
 class KMessageBoxNotify : public KMessageBoxNotifyInterface

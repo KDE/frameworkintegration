@@ -47,22 +47,22 @@ Q_COREAPP_STARTUP_FUNCTION(prepareEnvironment);
 class KStyle_UnitTest : public QObject
 {
     Q_OBJECT
-    private Q_SLOTS:
-        void initTestCase()
-        {
-            qApp->setStyle(new KStyle);
-        }
+private Q_SLOTS:
+    void initTestCase()
+    {
+        qApp->setStyle(new KStyle);
+    }
 
-        void testToolButtonStyleHint()
-        {
-            QToolBar *toolbar = new QToolBar();
-            QToolButton *btn = new QToolButton(toolbar);
+    void testToolButtonStyleHint()
+    {
+        QToolBar *toolbar = new QToolBar();
+        QToolButton *btn = new QToolButton(toolbar);
 
-            QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, 0, btn), (int)  Qt::ToolButtonTextOnly);
+        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, 0, btn), (int)  Qt::ToolButtonTextOnly);
 
-            toolbar->setProperty("otherToolbar", true);
-            QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, 0, btn), (int) Qt::ToolButtonTextUnderIcon);
-        }
+        toolbar->setProperty("otherToolbar", true);
+        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, 0, btn), (int) Qt::ToolButtonTextUnderIcon);
+    }
 };
 
 QTEST_MAIN(KStyle_UnitTest)

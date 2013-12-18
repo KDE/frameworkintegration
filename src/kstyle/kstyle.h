@@ -91,9 +91,9 @@ public:
      * 3) If you cache this value (good idea, this requires a map lookup) don't (!) forget to catch
      * style changes in QWidget::changeEvent()
      */
-     static StyleHint customStyleHint(const QString &element, const QWidget *widget);
-     static ControlElement customControlElement(const QString &element, const QWidget *widget);
-     static SubElement customSubElement(const QString &element, const QWidget *widget);
+    static StyleHint customStyleHint(const QString &element, const QWidget *widget);
+    static ControlElement customControlElement(const QString &element, const QWidget *widget);
+    static SubElement customSubElement(const QString &element, const QWidget *widget);
 
 protected:
 
@@ -131,9 +131,9 @@ protected:
 
 public:
 //@{
-    virtual int pixelMetric(PixelMetric m, const QStyleOption* opt = 0, const QWidget* widget = 0) const Q_DECL_OVERRIDE;
-    virtual int styleHint(StyleHint hint, const QStyleOption* opt,
-                            const QWidget* w, QStyleHintReturn* returnData) const Q_DECL_OVERRIDE;
+    virtual int pixelMetric(PixelMetric m, const QStyleOption *opt = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+    virtual int styleHint(StyleHint hint, const QStyleOption *opt,
+                          const QWidget *w, QStyleHintReturn *returnData) const Q_DECL_OVERRIDE;
 
     virtual void polish(QWidget *) Q_DECL_OVERRIDE;
     using  QCommonStyle::polish; //! needed to avoid warnings at compilation time
@@ -141,11 +141,10 @@ public:
     virtual QPalette standardPalette() const Q_DECL_OVERRIDE;
 
     virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = 0,
-                                     const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+                               const QWidget *widget = 0) const Q_DECL_OVERRIDE;
 //@}
 private:
-    KStylePrivate * const d;
+    KStylePrivate *const d;
 };
 
 #endif //KDE_KSTYLE_H
-// kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

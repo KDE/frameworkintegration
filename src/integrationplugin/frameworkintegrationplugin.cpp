@@ -31,9 +31,9 @@ Q_EXPORT_PLUGIN2(frameworkintegrationplugin, KFrameworkIntegrationPlugin)
 #endif
 
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownYesNo(const QString &dontShowAgainName,
-                                                              KMessageBox::ButtonCode &result)
+        KMessageBox::ButtonCode &result)
 {
-    KConfigGroup cg( KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages" );
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
     const QString dontAsk = cg.readEntry(dontShowAgainName, QString()).toLower();
     if (dontAsk == QLatin1String("yes") || dontAsk == QLatin1String("true")) {
         result = KMessageBox::Yes;
@@ -48,19 +48,19 @@ bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownYesNo(const QString &don
 
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownContinue(const QString &dontShowAgainName)
 {
-    KConfigGroup cg( KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages" );
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
     return cg.readEntry(dontShowAgainName, true);
 }
 
 void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainYesNo(const QString &dontShowAgainName,
-                                                                  KMessageBox::ButtonCode result)
+        KMessageBox::ButtonCode result)
 {
     KConfigGroup::WriteConfigFlags flags = KConfig::Persistent;
     if (dontShowAgainName[0] == QLatin1Char(':')) {
         flags |= KConfigGroup::Global;
     }
-    KConfigGroup cg( KMessageBox_againConfig? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages" );
-    cg.writeEntry( dontShowAgainName, result == KMessageBox::Yes, flags );
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
+    cg.writeEntry(dontShowAgainName, result == KMessageBox::Yes, flags);
     cg.sync();
 }
 
@@ -70,41 +70,41 @@ void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainContinue(const QStri
     if (dontShowAgainName[0] == QLatin1Char(':')) {
         flags |= KConfigGroup::Global;
     }
-    KConfigGroup cg( KMessageBox_againConfig? KMessageBox_againConfig: KSharedConfig::openConfig().data(), "Notification Messages" );
-    cg.writeEntry( dontShowAgainName, false, flags );
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
+    cg.writeEntry(dontShowAgainName, false, flags);
     cg.sync();
 }
 
 void KMessageBoxDontAskAgainConfigStorage::enableAllMessages()
 {
-   KConfig *config = KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data();
-   if (!config->hasGroup("Notification Messages")) {
-      return;
-   }
+    KConfig *config = KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data();
+    if (!config->hasGroup("Notification Messages")) {
+        return;
+    }
 
-   KConfigGroup cg(config, "Notification Messages" );
+    KConfigGroup cg(config, "Notification Messages");
 
-   typedef QMap<QString, QString> configMap;
+    typedef QMap<QString, QString> configMap;
 
-   const configMap map = cg.entryMap();
+    const configMap map = cg.entryMap();
 
-   configMap::ConstIterator it;
-   for (it = map.begin(); it != map.end(); ++it) {
-      cg.deleteEntry( it.key() );
-   }
+    configMap::ConstIterator it;
+    for (it = map.begin(); it != map.end(); ++it) {
+        cg.deleteEntry(it.key());
+    }
 }
 
 void KMessageBoxDontAskAgainConfigStorage::enableMessage(const QString &dontShowAgainName)
 {
-   KConfig *config = KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data();
-   if (!config->hasGroup("Notification Messages")) {
-      return;
-   }
+    KConfig *config = KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data();
+    if (!config->hasGroup("Notification Messages")) {
+        return;
+    }
 
-   KConfigGroup cg( config, "Notification Messages" );
+    KConfigGroup cg(config, "Notification Messages");
 
-   cg.deleteEntry(dontShowAgainName);
-   config->sync();
+    cg.deleteEntry(dontShowAgainName);
+    config->sync();
 }
 
 void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget *parent)
@@ -126,7 +126,7 @@ void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, con
     }
 
     KNotification::event(messageType, message, QPixmap(), parent,
-        KNotification::DefaultEvent | KNotification::CloseOnTimeout);
+                         KNotification::DefaultEvent | KNotification::CloseOnTimeout);
 }
 
 KFrameworkIntegrationPlugin::KFrameworkIntegrationPlugin()
