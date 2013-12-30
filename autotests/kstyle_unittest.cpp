@@ -52,6 +52,12 @@ private Q_SLOTS:
     {
         qApp->setStyle(new KStyle);
     }
+    void cleanupTestCase()
+    {
+        QString configPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+        configPath.append("/kdeglobals");
+        QFile::remove(configPath);
+    }
 
     void testToolButtonStyleHint()
     {
