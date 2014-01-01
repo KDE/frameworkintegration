@@ -36,6 +36,8 @@ add_library(KF5Style kstyle.cpp)
 generate_export_header(KF5Style BASE_NAME KStyle)
 add_library(KF5::Style ALIAS KF5Style)
 
+target_include_directories(KF5Style INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kstyle>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KStyle>")
+
 target_link_libraries(KF5Style
   PUBLIC
     Qt5::Widgets
@@ -49,23 +51,32 @@ set_target_properties(KF5Style PROPERTIES VERSION   ${KSTYLE_VERSION_STRING}
                                           EXPORT_NAME Style
 )
 
+ecm_generate_headers(
+  KStyle
+
+  MODULE_NAME KStyle
+  REQUIRED_HEADERS KStyle_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KStyle DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+
 install(TARGETS KF5Style EXPORT KF5StyleTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
-    kstyle.h
-    ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
-    DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
+  ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
+  ${KStyle_HEADERS}
+  DESTINATION ${INCLUDE_INSTALL_DIR}/kstyle COMPONENT Devel
 )
 
 install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KF5StyleConfig.cmake"
                "${CMAKE_CURRENT_BINARY_DIR}/KF5StyleConfigVersion.cmake"
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel )
+        COMPONENT Devel)
 
 install(EXPORT KF5StyleTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5StyleTargets.cmake NAMESPACE KF5:: )
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kstyle_version.h
-        DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel )
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/kstyle_version.h
+  DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
 if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
     feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
