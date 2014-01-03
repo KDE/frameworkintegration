@@ -74,3 +74,4 @@ private Q_SLOTS:
 QTEST_MAIN(KStyle_UnitTest)
 
 #include "kstyle_unittest.moc"
+
