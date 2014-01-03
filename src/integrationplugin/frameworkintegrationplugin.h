@@ -17,6 +17,8 @@
  *  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  *  Boston, MA 02110-1301, USA.
  */
+#ifndef FRAMEWORKINTEGRATIONPLUGIN_H
+#define FRAMEWORKINTEGRATIONPLUGIN_H
 
 #include <QObject>
 #include <kmessageboxdontaskagaininterface.h>
@@ -66,3 +68,4 @@ private:
     KMessageBoxNotify m_notify;
 };
 
+#endif // FRAMEWORKINTEGRATIONPLUGIN_H
