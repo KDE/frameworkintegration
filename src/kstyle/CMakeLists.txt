@@ -36,7 +36,7 @@ add_library(KF5Style kstyle.cpp)
 generate_export_header(KF5Style BASE_NAME KStyle)
 add_library(KF5::Style ALIAS KF5Style)
 
-target_include_directories(KF5Style INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kstyle>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KStyle>")
+target_include_directories(KF5Style INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KStyle>")
 
 target_link_libraries(KF5Style
   PUBLIC
@@ -64,7 +64,7 @@ install(TARGETS KF5Style EXPORT KF5StyleTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
   ${KStyle_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/kstyle COMPONENT Devel
+  DESTINATION ${INCLUDE_INSTALL_DIR}/KStyle COMPONENT Devel
 )
 
 install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KF5StyleConfig.cmake"
