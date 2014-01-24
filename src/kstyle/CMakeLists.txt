@@ -13,7 +13,20 @@ include(ECMSetupVersion)
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings)
 include(KDECMakeSettings)
-find_package(Qt5 5.2.0 CONFIG REQUIRED Test Concurrent)
+set(REQUIRED_QT_VERSION 5.2.0)
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Test Concurrent)
+
+find_package(XCB COMPONENTS XCB)
+set_package_properties(XCB PROPERTIES DESCRIPTION "X protocol C-language Binding"
+                       URL "http://xcb.freedesktop.org"
+                       TYPE OPTIONAL
+                       PURPOSE "Required to pass style properties to native Windows on X11 Platform"
+                      )
+
+if (XCB_XCB_FOUND)
+    find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED X11Extras)
+    add_definitions(-DHAVE_X11=1)
+endif()
 
 set(KF5_VERSION "5.0.0")
 
@@ -45,6 +58,14 @@ target_link_libraries(KF5Style
     KF5::ConfigWidgets
     KF5::IconThemes
 )
+
+if (XCB_XCB_FOUND)
+    target_link_libraries(KF5Style
+      PRIVATE
+        Qt5::X11Extras
+        ${XCB_XCB_LIBRARY}
+    )
+endif()
 
 set_target_properties(KF5Style PROPERTIES VERSION   ${KSTYLE_VERSION_STRING}
                                           SOVERSION ${KSTYLE_SOVERSION}
