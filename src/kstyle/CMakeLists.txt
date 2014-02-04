@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 project(KStyle)
 
-find_package(ECM 0.0.9 REQUIRED NO_MODULE)
+find_package(ECM 0.0.10 REQUIRED NO_MODULE)
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
@@ -33,7 +33,7 @@ if (XCB_XCB_FOUND)
     add_definitions(-DHAVE_X11=1)
 endif()
 
-set(KF5_VERSION "5.0.0")
+set(KF5_VERSION "4.96.0")
 
 find_package(KF5ConfigWidgets ${KF5_VERSION} REQUIRED)
 find_package(KF5IconThemes ${KF5_VERSION} REQUIRED)
