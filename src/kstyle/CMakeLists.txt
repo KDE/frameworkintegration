@@ -7,13 +7,15 @@ set_package_properties(XCB PROPERTIES
     PURPOSE "Required to pass style properties to native Windows on X11 Platform"
 )
 
+set(HAVE_X11 ${XCB_XCB_FOUND})
 if (XCB_XCB_FOUND)
     find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED X11Extras)
-    add_definitions(-DHAVE_X11=1)
 endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5Style")
+
+configure_file(config-kstyle.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kstyle.h )
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
