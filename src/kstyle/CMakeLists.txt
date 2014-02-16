@@ -44,13 +44,11 @@ set_target_properties(KF5Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSI
                                           EXPORT_NAME Style
 )
 
-ecm_generate_headers(KStyle
-    MODULE_NAME KStyle
-    REQUIRED_HEADERS KStyle_HEADERS
+ecm_generate_headers(KStyle_HEADERS
+  HEADER_NAMES
+    KStyle
+  REQUIRED_HEADERS KStyle_HEADERS
 )
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KStyle
-        DESTINATION ${INCLUDE_INSTALL_DIR}
-        COMPONENT Devel)
 
 install(TARGETS KF5Style
         EXPORT KF5FrameworkIntegrationTargets
