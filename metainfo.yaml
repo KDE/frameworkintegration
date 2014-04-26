@@ -1,1 +1,11 @@
+maintainer: afiestas
+description: Workspace and cross-framework integration plugins
 tier: 4
+type: integration
+platforms:
+    - name: All
+    - name: Linux
+      note: XCB is needed for KStyle
+portingAid: false
+deprecated: false
+release: true
