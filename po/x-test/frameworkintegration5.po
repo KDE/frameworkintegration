@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: frameworkintegration5\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-04-27 20:56+0000\n"
+"PO-Revision-Date: 2014-04-27 21:05+0000\n"
+"Last-Translator: transxx.py program <null@kde.org>\n"
+"Language-Team: KDE Test Language <kde-i18n-doc@kde.org>\n"
+"Language: x-test\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:190
+msgid "Opening..."
+msgstr "xxOpening...xx"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:190
+msgid "Saving..."
+msgstr "xxSaving...xx"
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "xxNew Folderxx"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "xxNew Folderxx"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"xxCreate new folder in:\n"
+"%1xx"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "xxA file or folder named %1 already exists.xx"
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "xxYou do not have permission to create that folder.xx"
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "xxSelect Folderxx"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "xxNew Folder...xx"
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "xxNew Folder...xx"
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "xxMove to Trashxx"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "xxDeletexx"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "xxShow Hidden Foldersxx"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "xxPropertiesxx"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "xxShow Hidden Foldersxx"
