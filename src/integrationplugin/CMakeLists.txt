@@ -10,4 +10,4 @@ target_link_libraries(FrameworkIntegrationPlugin
 )
 
 install(TARGETS FrameworkIntegrationPlugin
-        DESTINATION ${QT_PLUGIN_INSTALL_DIR}/kf5)
+        DESTINATION ${PLUGIN_INSTALL_DIR}/kf5)
