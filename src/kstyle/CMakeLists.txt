@@ -7,9 +7,11 @@ set_package_properties(XCB PROPERTIES
     PURPOSE "Required to pass style properties to native Windows on X11 Platform"
 )
 
-set(HAVE_X11 ${XCB_XCB_FOUND})
-if (XCB_XCB_FOUND)
+if(NOT APPLE)
+  set(HAVE_X11 ${XCB_XCB_FOUND})
+  if (XCB_XCB_FOUND)
     find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED X11Extras)
+  endif()
 endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
@@ -33,12 +35,8 @@ target_link_libraries(KF5Style
         KF5::IconThemes
 )
 
-if (XCB_XCB_FOUND)
-    target_link_libraries(KF5Style
-        PRIVATE
-            Qt5::X11Extras
-            ${XCB_XCB_LIBRARY}
-    )
+if(HAVE_X11)
+  target_link_libraries(KF5Style PRIVATE Qt5::X11Extras ${XCB_XCB_LIBRARY})
 endif()
 
 set_target_properties(KF5Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION_STRING}
