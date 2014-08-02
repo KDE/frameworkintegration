@@ -1,0 +1,94 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Weng Xuetian <wengxt@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-19 07:59+0000\n"
+"PO-Revision-Date: 2014-07-16 15:21-0400\n"
+"Last-Translator: Weng Xuetian <wengxt@gmail.com>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:216
+msgid "Opening..."
+msgstr "正在打开..."
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:216
+msgid "Saving..."
+msgstr "正在保存..."
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "新文件夹"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "新建文件夹"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"创建新文件夹的位置：\n"
+"%1"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "名为 %1 的文件或文件夹已存在。"
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "您没有创建该文件夹的权限。"
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "选择文件夹"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "新建文件夹..."
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "新建文件夹..."
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "移至回收站"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "删除"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "显示隐藏文件夹"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "属性"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "显示隐藏文件夹"
