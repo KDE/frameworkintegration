@@ -462,6 +462,14 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
                : buttonStyle == QLatin1String("textonly") ? Qt::ToolButtonTextOnly
                : Qt::ToolButtonIconOnly;
     }
+
+    case SH_KCustomStyleElement:
+        if (!widget) {
+            return 0;
+        }
+
+        return d->styleElements.value(widget->objectName(), 0);
+
     default:
         break;
     };
