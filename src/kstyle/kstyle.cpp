@@ -67,7 +67,7 @@
 
 static const QStyle::StyleHint SH_KCustomStyleElement = (QStyle::StyleHint)0xff000001;
 static const int X_KdeBase = 0xff000000;
-static const char *s_schemePropertyName = "KDE_COLOR_SCHEME_PATH";
+static const char s_schemePropertyName[] = "KDE_COLOR_SCHEME_PATH";
 
 /**
  * An event filter intended to be used for all toplevel QWidgets.
