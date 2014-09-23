@@ -32,13 +32,13 @@ public:
     KMessageBoxDontAskAgainConfigStorage() : KMessageBox_againConfig(0) {}
     virtual ~KMessageBoxDontAskAgainConfigStorage() {}
 
-    virtual bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result);
-    virtual bool shouldBeShownContinue(const QString &dontShowAgainName);
-    virtual void saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result);
-    virtual void saveDontShowAgainContinue(const QString &dontShowAgainName);
-    virtual void enableAllMessages();
-    virtual void enableMessage(const QString &dontShowAgainName);
-    virtual void setConfig(KConfig *cfg)
+    virtual bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) Q_DECL_OVERRIDE;
+    virtual bool shouldBeShownContinue(const QString &dontShowAgainName) Q_DECL_OVERRIDE;
+    virtual void saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result) Q_DECL_OVERRIDE;
+    virtual void saveDontShowAgainContinue(const QString &dontShowAgainName) Q_DECL_OVERRIDE;
+    virtual void enableAllMessages() Q_DECL_OVERRIDE;
+    virtual void enableMessage(const QString &dontShowAgainName) Q_DECL_OVERRIDE;
+    virtual void setConfig(KConfig *cfg) Q_DECL_OVERRIDE
     {
         KMessageBox_againConfig = cfg;
     }
