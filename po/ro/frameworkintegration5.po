@@ -1,0 +1,125 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sergiu Bivol <sergiu@ase.md>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-02 09:50+0000\n"
+"PO-Revision-Date: 2014-05-02 12:07+0300\n"
+"Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:234
+msgid "Opening..."
+msgstr "Se deschide..."
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:234
+msgid "Saving..."
+msgstr "Se salvează..."
+
+#: platformtheme/kdeplatformtheme.cpp:227
+msgctxt "@action:button"
+msgid "Save All"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:233
+msgctxt "@action:button"
+msgid "Yes to All"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:237
+msgctxt "@action:button"
+msgid "No to All"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:240
+msgctxt "@action:button"
+msgid "Abort"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:242
+msgctxt "@action:button"
+msgid "Retry"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:244
+msgctxt "@action:button"
+msgid "Ignore"
+msgstr ""
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "Dosar nou"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Dosar nou"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Creează un dosar nou în:\n"
+"%1"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "Există deja un fișier sau un dosar cu denumirea %1."
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "Nu aveți permisiuni pentru a crea acel dosar."
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "Alege dosarul"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "Dosar nou..."
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "Dosar nou..."
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "Mută la gunoi"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Șterge"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "Arată dosarele ascunse"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Proprietăți"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "Arată dosarele ascunse"
