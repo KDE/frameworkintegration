@@ -10,4 +10,4 @@ target_link_libraries(FrameworkIntegrationPlugin
 )
 
 install(TARGETS FrameworkIntegrationPlugin
-        DESTINATION ${PLUGIN_INSTALL_DIR}/kf5)
+        DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5)

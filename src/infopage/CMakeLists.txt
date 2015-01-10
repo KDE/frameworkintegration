@@ -24,4 +24,4 @@ install(FILES
     box-center.png
     kde_infopage.css
     kde_infopage_rtl.css
-    DESTINATION ${KF5_DATA_INSTALL_DIR}/infopage)
+    DESTINATION ${KDE_INSTALL_DATADIR_KF5}/infopage)

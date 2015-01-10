@@ -15,7 +15,7 @@ if(NOT APPLE)
 endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5Style")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5Style")
 
 configure_file(config-kstyle.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kstyle.h )
 
@@ -25,7 +25,7 @@ add_library(KF5Style kstyle.cpp)
 generate_export_header(KF5Style BASE_NAME KStyle)
 add_library(KF5::Style ALIAS KF5Style)
 
-target_include_directories(KF5Style INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KStyle>")
+target_include_directories(KF5Style INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KStyle>")
 
 target_link_libraries(KF5Style
     PUBLIC
@@ -56,6 +56,6 @@ install(TARGETS KF5Style
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
               ${KStyle_HEADERS}
-        DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KStyle
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KStyle
         COMPONENT Devel)
 
