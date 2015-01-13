@@ -103,7 +103,7 @@ bool ColorSchemeFilter::eventFilter(QObject *object, QEvent *event)
 
 void ColorSchemeFilter::installColorScheme(QWidget *w)
 {
-    if (!w) {
+    if (!w || !w->isTopLevel()) {
         return;
     }
 #if HAVE_X11
