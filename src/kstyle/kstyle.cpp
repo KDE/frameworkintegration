@@ -416,11 +416,6 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption */*op
 int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget *widget, QStyleHintReturn *returnData) const
 {
     switch (hint) {
-    case SH_ItemView_ActivateItemOnSingleClick: {
-        KConfigGroup g(KSharedConfig::openConfig(), "KDE");
-        return g.readEntry("SingleClick", true);
-    }
-
     case SH_DialogButtonBox_ButtonsHaveIcons: {
         // was KGlobalSettings::showIconsOnPushButtons() :
         KConfigGroup g(KSharedConfig::openConfig(), "KDE");
