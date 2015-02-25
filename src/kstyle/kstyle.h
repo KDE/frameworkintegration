@@ -131,14 +131,14 @@ protected:
 
 public:
 //@{
-    virtual int pixelMetric(PixelMetric m, const QStyleOption *opt = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+    int pixelMetric(PixelMetric m, const QStyleOption *opt = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
     virtual int styleHint(StyleHint hint, const QStyleOption *opt,
                           const QWidget *w, QStyleHintReturn *returnData) const Q_DECL_OVERRIDE;
 
-    virtual void polish(QWidget *) Q_DECL_OVERRIDE;
+    void polish(QWidget *) Q_DECL_OVERRIDE;
     using  QCommonStyle::polish; //! needed to avoid warnings at compilation time
 
-    virtual QPalette standardPalette() const Q_DECL_OVERRIDE;
+    QPalette standardPalette() const Q_DECL_OVERRIDE;
 
     virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = 0,
                                const QWidget *widget = 0) const Q_DECL_OVERRIDE;
