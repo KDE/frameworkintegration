@@ -2,6 +2,7 @@
 IconName=kde
 Comment=Plasma Workspace
 Comment[ar]=مساحة عمل بلازما
+Comment[ast]=Estaya de trabayu Plasma
 Comment[bs]=Plazma radni prostor
 Comment[ca]=Espai de treball del Plasma
 Comment[cs]=Pracovní plocha Plasma
@@ -856,6 +857,7 @@ Action=Popup
 [Event/printerror]
 Name=Print Error
 Name[ar]=خطأ طباعة
+Name[ast]=Fallu d'imprentación
 Name[bs]=Greška štampanja
 Name[ca]=Error d'impressió
 Name[cs]=Chyba tisku
@@ -891,6 +893,7 @@ Name[zh_CN]=打印错误
 Name[zh_TW]=列印錯誤
 Comment=A print error has occurred
 Comment[ar]=حدث خطأ في الطباعة
+Comment[ast]=Asocedió un fallu d'imprentación
 Comment[bs]=Došlo je do greške pri štampanju
 Comment[ca]=S'ha produït un error d'impressió
 Comment[cs]=Nastala chyba v tisku
