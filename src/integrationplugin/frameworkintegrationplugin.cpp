@@ -135,3 +135,8 @@ KFrameworkIntegrationPlugin::KFrameworkIntegrationPlugin()
     setProperty(KMESSAGEBOXDONTASKAGAIN_PROPERTY, QVariant::fromValue<KMessageBoxDontAskAgainInterface *>(&m_dontAskAgainConfigStorage));
     setProperty(KMESSAGEBOXNOTIFY_PROPERTY, QVariant::fromValue<KMessageBoxNotifyInterface *>(&m_notify));
 }
+
+void KFrameworkIntegrationPlugin::reparseConfiguration()
+{
+    KSharedConfig::openConfig()->reparseConfiguration();
+}

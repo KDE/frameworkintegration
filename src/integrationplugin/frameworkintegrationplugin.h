@@ -63,6 +63,9 @@ public:
 
     KFrameworkIntegrationPlugin();
 
+public Q_SLOTS:
+    void reparseConfiguration();
+
 private:
     KMessageBoxDontAskAgainConfigStorage m_dontAskAgainConfigStorage;
     KMessageBoxNotify m_notify;
