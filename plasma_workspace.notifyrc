@@ -1349,6 +1349,7 @@ Sound=Oxygen-Sys-App-Message.ogg
 
 [Event/plasmoidDeleted]
 Name=Widget deleted
+Name[ar]=حُذفت ودجة
 Name[ca]=Estri suprimit
 Name[de]=Miniprogramm wurde gelöscht
 Name[en_GB]=Widget deleted
@@ -1373,6 +1374,7 @@ Name[uk]=Віджет вилучено
 Name[x-test]=xxWidget deletedxx
 Name[zh_CN]=部件已删除
 Comment=A widget has been deleted
+Comment[ar]=حُذفت ودجة ما
 Comment[ca]=S'ha suprimit un estri
 Comment[cs]=Widget byl smazán
 Comment[de]=Ein Miniprogramm wurde gelöscht
