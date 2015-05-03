@@ -1,0 +1,127 @@
+# Lithuanian translations for trunk-kf package.
+# Copyright (C) 2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the trunk-kf package.
+#
+# Automatically generated, 2014.
+# Liudas Ališauskas <liudas@akmc.lt>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk-kf 5\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-02 09:50+0000\n"
+"PO-Revision-Date: 2015-01-26 13:24+0200\n"
+"Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:234
+msgid "Opening..."
+msgstr "Atveriama..."
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:234
+msgid "Saving..."
+msgstr "Įrašoma..."
+
+#: platformtheme/kdeplatformtheme.cpp:227
+msgctxt "@action:button"
+msgid "Save All"
+msgstr "Išsaugoti viską"
+
+#: platformtheme/kdeplatformtheme.cpp:233
+msgctxt "@action:button"
+msgid "Yes to All"
+msgstr "Taip viskam"
+
+#: platformtheme/kdeplatformtheme.cpp:237
+msgctxt "@action:button"
+msgid "No to All"
+msgstr "Ne viskam"
+
+#: platformtheme/kdeplatformtheme.cpp:240
+msgctxt "@action:button"
+msgid "Abort"
+msgstr "Nutraukti"
+
+#: platformtheme/kdeplatformtheme.cpp:242
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Bandyti vėl"
+
+#: platformtheme/kdeplatformtheme.cpp:244
+msgctxt "@action:button"
+msgid "Ignore"
+msgstr "Ignoruoti"
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "Naujas aplankas"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Naujas aplankas"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Sukurti naują aplanką esantį:\n"
+"%1"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "Failas ar aplankas pavadinimu %1 jau egzistuoja."
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "Neturite leidimo sukurti šio aplanko."
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "Pasirinkti aplanką"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "Naujas aplankas..."
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "Naujas aplankas..."
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "Perkelti į šiukšlinę"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Trinti"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "Rodyti paslėptus aplankus"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Savybės"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "Rodyti paslėptus aplankus"
