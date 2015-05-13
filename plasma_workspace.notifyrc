@@ -1377,6 +1377,7 @@ Name[sv]=Grafisk komponent borttagen
 Name[uk]=Віджет вилучено
 Name[x-test]=xxWidget deletedxx
 Name[zh_CN]=部件已删除
+Name[zh_TW]=元件已刪除
 Comment=A widget has been deleted
 Comment[ar]=حُذفت ودجة ما
 Comment[ca]=S'ha suprimit un estri
@@ -1406,5 +1407,6 @@ Comment[sv]=En grafisk komponent har tagits bort
 Comment[uk]=Віджет було вилучено
 Comment[x-test]=xxA widget has been deletedxx
 Comment[zh_CN]=一个部件已删除
+Comment[zh_TW]=元件已被刪除
 Action=Popup
 
