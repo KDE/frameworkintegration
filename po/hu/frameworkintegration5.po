@@ -1,0 +1,124 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-07-16 08:54+0000\n"
+"PO-Revision-Date: 2014-04-22 14:51+0200\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:239
+msgid "Opening..."
+msgstr "Megnyitás…"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:239
+msgid "Saving..."
+msgstr "Mentés…"
+
+#: platformtheme/kdeplatformtheme.cpp:227
+msgctxt "@action:button"
+msgid "Save All"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:233
+msgctxt "@action:button"
+msgid "Yes to All"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:237
+msgctxt "@action:button"
+msgid "No to All"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:240
+msgctxt "@action:button"
+msgid "Abort"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:242
+msgctxt "@action:button"
+msgid "Retry"
+msgstr ""
+
+#: platformtheme/kdeplatformtheme.cpp:244
+msgctxt "@action:button"
+msgid "Ignore"
+msgstr ""
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "Új mappa"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Új mappa"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Új mappa létrehozása itt:\n"
+"%1"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "%1 nevű fájl vagy mappa már létezik."
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "Nincs jogosultsága a mappa létrehozásához."
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "Mappa kiválasztása"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "Új mappa…"
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "Új mappa…"
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "Áthelyezés a Kukába"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Törlés"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "Rejtett mappák megjelenítése"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "A rejtett mappák megjelenítése"

@@ -1,0 +1,125 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marce Villarino <mvillarino@kde-espana.org>, 2014.
+# Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-07-16 08:54+0000\n"
+"PO-Revision-Date: 2015-03-13 08:39+0100\n"
+"Last-Translator: Adrián Chaves Fernández <adriyetichaves@gmail.com>\n"
+"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:239
+msgid "Opening..."
+msgstr "Estase a abrir..."
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:239
+msgid "Saving..."
+msgstr "Estase a gardar..."
+
+#: platformtheme/kdeplatformtheme.cpp:227
+msgctxt "@action:button"
+msgid "Save All"
+msgstr "Gardar todo"
+
+#: platformtheme/kdeplatformtheme.cpp:233
+msgctxt "@action:button"
+msgid "Yes to All"
+msgstr "Si a todo"
+
+#: platformtheme/kdeplatformtheme.cpp:237
+msgctxt "@action:button"
+msgid "No to All"
+msgstr "Non a todo"
+
+#: platformtheme/kdeplatformtheme.cpp:240
+msgctxt "@action:button"
+msgid "Abort"
+msgstr "Interromper"
+
+#: platformtheme/kdeplatformtheme.cpp:242
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Volvelo intentar"
+
+#: platformtheme/kdeplatformtheme.cpp:244
+msgctxt "@action:button"
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "Cartafol novo"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Novo cartafol"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Crear un cartafol novo en:\n"
+"%1"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "Xa existe un ficheiro ou cartafol chamado %1."
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "Non ten permisos para crear ese cartafol."
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "Escoller un cartafol"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "Novo cartafol..."
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "Novo cartafol..."
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "Deitar no lixo"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "Mostrar os cartafoles agochados"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Propiedades"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "Mostrar os cartafoles agochados"
