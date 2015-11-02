@@ -49,7 +49,7 @@ static void prepareEnvironment()
     }
 }
 
-Q_COREAPP_STARTUP_FUNCTION(prepareEnvironment);
+Q_COREAPP_STARTUP_FUNCTION(prepareEnvironment)
 
 class KStyle_UnitTest : public QObject
 {
