@@ -457,6 +457,7 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 [Event/notification]
 Name=Notification
 Name[ar]=إخطار
+Name[ast]=Avisu
 Name[bs]=Obavještenje
 Name[ca]=Notificació
 Name[ca@valencia]=Notificació
