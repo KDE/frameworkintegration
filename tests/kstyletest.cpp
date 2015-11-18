@@ -63,7 +63,7 @@ int main(int argc, char **argv)
     QWidget w;
     w.setLayout(new QVBoxLayout);
 
-    QPushButton *showDialogButton = new QPushButton(QLatin1Literal("Dialog"), &w);
+    QPushButton *showDialogButton = new QPushButton(QStringLiteral("Dialog"), &w);
     QObject::connect(showDialogButton, &QPushButton::clicked, &showDialog);
     w.layout()->addWidget(showDialogButton);
     w.resize(200, 200);

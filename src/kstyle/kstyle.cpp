@@ -297,116 +297,116 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption */*op
 {
     switch (standardIcon) {
     case QStyle::SP_DesktopIcon:
-        return QIcon::fromTheme("user-desktop");
+        return QIcon::fromTheme(QStringLiteral("user-desktop"));
     case QStyle::SP_TrashIcon:
-        return QIcon::fromTheme("user-trash");
+        return QIcon::fromTheme(QStringLiteral("user-trash"));
     case QStyle::SP_ComputerIcon:
-        return QIcon::fromTheme("computer");
+        return QIcon::fromTheme(QStringLiteral("computer"));
     case QStyle::SP_DriveFDIcon:
-        return QIcon::fromTheme("media-floppy");
+        return QIcon::fromTheme(QStringLiteral("media-floppy"));
     case QStyle::SP_DriveHDIcon:
-        return QIcon::fromTheme("drive-harddisk");
+        return QIcon::fromTheme(QStringLiteral("drive-harddisk"));
     case QStyle::SP_DriveCDIcon:
     case QStyle::SP_DriveDVDIcon:
-        return QIcon::fromTheme("drive-optical");
+        return QIcon::fromTheme(QStringLiteral("drive-optical"));
     case QStyle::SP_DriveNetIcon:
-        return QIcon::fromTheme("folder-remote");
+        return QIcon::fromTheme(QStringLiteral("folder-remote"));
     case QStyle::SP_DirHomeIcon:
-        return QIcon::fromTheme("user-home");
+        return QIcon::fromTheme(QStringLiteral("user-home"));
     case QStyle::SP_DirOpenIcon:
-        return QIcon::fromTheme("document-open-folder");
+        return QIcon::fromTheme(QStringLiteral("document-open-folder"));
     case QStyle::SP_DirClosedIcon:
-        return QIcon::fromTheme("folder");
+        return QIcon::fromTheme(QStringLiteral("folder"));
     case QStyle::SP_DirIcon:
-        return QIcon::fromTheme("folder");
+        return QIcon::fromTheme(QStringLiteral("folder"));
     case QStyle::SP_DirLinkIcon:
-        return QIcon::fromTheme("folder"); //TODO: generate (!?) folder with link emblem
+        return QIcon::fromTheme(QStringLiteral("folder")); //TODO: generate (!?) folder with link emblem
     case QStyle::SP_FileIcon:
-        return QIcon::fromTheme("text-plain"); //TODO: look for a better icon
+        return QIcon::fromTheme(QStringLiteral("text-plain")); //TODO: look for a better icon
     case QStyle::SP_FileLinkIcon:
-        return QIcon::fromTheme("text-plain"); //TODO: generate (!?) file with link emblem
+        return QIcon::fromTheme(QStringLiteral("text-plain")); //TODO: generate (!?) file with link emblem
     case QStyle::SP_FileDialogStart:
-        return QIcon::fromTheme("media-playback-start"); //TODO: find correct icon
+        return QIcon::fromTheme(QStringLiteral("media-playback-start")); //TODO: find correct icon
     case QStyle::SP_FileDialogEnd:
-        return QIcon::fromTheme("media-playback-stop"); //TODO: find correct icon
+        return QIcon::fromTheme(QStringLiteral("media-playback-stop")); //TODO: find correct icon
     case QStyle::SP_FileDialogToParent:
-        return QIcon::fromTheme("go-up");
+        return QIcon::fromTheme(QStringLiteral("go-up"));
     case QStyle::SP_FileDialogNewFolder:
-        return QIcon::fromTheme("folder-new");
+        return QIcon::fromTheme(QStringLiteral("folder-new"));
     case QStyle::SP_FileDialogDetailedView:
-        return QIcon::fromTheme("view-list-details");
+        return QIcon::fromTheme(QStringLiteral("view-list-details"));
     case QStyle::SP_FileDialogInfoView:
-        return QIcon::fromTheme("document-properties");
+        return QIcon::fromTheme(QStringLiteral("document-properties"));
     case QStyle::SP_FileDialogContentsView:
-        return QIcon::fromTheme("view-list-icons");
+        return QIcon::fromTheme(QStringLiteral("view-list-icons"));
     case QStyle::SP_FileDialogListView:
-        return QIcon::fromTheme("view-list-text");
+        return QIcon::fromTheme(QStringLiteral("view-list-text"));
     case QStyle::SP_FileDialogBack:
-        return QIcon::fromTheme("go-previous");
+        return QIcon::fromTheme(QStringLiteral("go-previous"));
     case QStyle::SP_MessageBoxInformation:
-        return QIcon::fromTheme("dialog-information");
+        return QIcon::fromTheme(QStringLiteral("dialog-information"));
     case QStyle::SP_MessageBoxWarning:
-        return QIcon::fromTheme("dialog-warning");
+        return QIcon::fromTheme(QStringLiteral("dialog-warning"));
     case QStyle::SP_MessageBoxCritical:
-        return QIcon::fromTheme("dialog-error");
+        return QIcon::fromTheme(QStringLiteral("dialog-error"));
     case QStyle::SP_MessageBoxQuestion:
-        return QIcon::fromTheme("dialog-information");
+        return QIcon::fromTheme(QStringLiteral("dialog-information"));
     case QStyle::SP_DialogOkButton:
-        return QIcon::fromTheme("dialog-ok");
+        return QIcon::fromTheme(QStringLiteral("dialog-ok"));
     case QStyle::SP_DialogCancelButton:
-        return QIcon::fromTheme("dialog-cancel");
+        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
     case QStyle::SP_DialogHelpButton:
-        return QIcon::fromTheme("help-contents");
+        return QIcon::fromTheme(QStringLiteral("help-contents"));
     case QStyle::SP_DialogOpenButton:
-        return QIcon::fromTheme("document-open");
+        return QIcon::fromTheme(QStringLiteral("document-open"));
     case QStyle::SP_DialogSaveButton:
-        return QIcon::fromTheme("document-save");
+        return QIcon::fromTheme(QStringLiteral("document-save"));
     case QStyle::SP_DialogCloseButton:
-        return QIcon::fromTheme("dialog-close");
+        return QIcon::fromTheme(QStringLiteral("dialog-close"));
     case QStyle::SP_DialogApplyButton:
-        return QIcon::fromTheme("dialog-ok-apply");
+        return QIcon::fromTheme(QStringLiteral("dialog-ok-apply"));
     case QStyle::SP_DialogResetButton:
-        return QIcon::fromTheme("document-revert");
+        return QIcon::fromTheme(QStringLiteral("document-revert"));
     case QStyle::SP_DialogDiscardButton:
-        return QIcon::fromTheme("dialog-cancel");
+        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
     case QStyle::SP_DialogYesButton:
-        return QIcon::fromTheme("dialog-ok-apply");
+        return QIcon::fromTheme(QStringLiteral("dialog-ok-apply"));
     case QStyle::SP_DialogNoButton:
-        return QIcon::fromTheme("dialog-cancel");
+        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
     case QStyle::SP_ArrowUp:
-        return QIcon::fromTheme("go-up");
+        return QIcon::fromTheme(QStringLiteral("go-up"));
     case QStyle::SP_ArrowDown:
-        return QIcon::fromTheme("go-down");
+        return QIcon::fromTheme(QStringLiteral("go-down"));
     case QStyle::SP_ArrowLeft:
-        return QIcon::fromTheme("go-previous-view");
+        return QIcon::fromTheme(QStringLiteral("go-previous-view"));
     case QStyle::SP_ArrowRight:
-        return QIcon::fromTheme("go-next-view");
+        return QIcon::fromTheme(QStringLiteral("go-next-view"));
     case QStyle::SP_ArrowBack:
-        return QIcon::fromTheme("go-previous");
+        return QIcon::fromTheme(QStringLiteral("go-previous"));
     case QStyle::SP_ArrowForward:
-        return QIcon::fromTheme("go-next");
+        return QIcon::fromTheme(QStringLiteral("go-next"));
     case QStyle::SP_BrowserReload:
-        return QIcon::fromTheme("view-refresh");
+        return QIcon::fromTheme(QStringLiteral("view-refresh"));
     case QStyle::SP_BrowserStop:
-        return QIcon::fromTheme("process-stop");
+        return QIcon::fromTheme(QStringLiteral("process-stop"));
     case QStyle::SP_MediaPlay:
-        return QIcon::fromTheme("media-playback-start");
+        return QIcon::fromTheme(QStringLiteral("media-playback-start"));
     case QStyle::SP_MediaStop:
-        return QIcon::fromTheme("media-playback-stop");
+        return QIcon::fromTheme(QStringLiteral("media-playback-stop"));
     case QStyle::SP_MediaPause:
-        return QIcon::fromTheme("media-playback-pause");
+        return QIcon::fromTheme(QStringLiteral("media-playback-pause"));
     case QStyle::SP_MediaSkipForward:
-        return QIcon::fromTheme("media-skip-forward");
+        return QIcon::fromTheme(QStringLiteral("media-skip-forward"));
     case QStyle::SP_MediaSkipBackward:
-        return QIcon::fromTheme("media-skip-backward");
+        return QIcon::fromTheme(QStringLiteral("media-skip-backward"));
     case QStyle::SP_MediaSeekForward:
-        return QIcon::fromTheme("media-seek-forward");
+        return QIcon::fromTheme(QStringLiteral("media-seek-forward"));
     case QStyle::SP_MediaSeekBackward:
-        return QIcon::fromTheme("media-seek-backward");
+        return QIcon::fromTheme(QStringLiteral("media-seek-backward"));
     case QStyle::SP_MediaVolume:
-        return QIcon::fromTheme("audio-volume-medium");
+        return QIcon::fromTheme(QStringLiteral("audio-volume-medium"));
     case QStyle::SP_MediaVolumeMuted:
-        return QIcon::fromTheme("audio-volume-muted");
+        return QIcon::fromTheme(QStringLiteral("audio-volume-muted"));
 
     default:
         return QIcon();

@@ -37,7 +37,7 @@ static void prepareEnvironment()
 
     QString configPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
 
-    if(!QDir(configPath).mkpath(".")) {
+    if(!QDir(configPath).mkpath(QStringLiteral("."))) {
         qFatal("Failed to create test configuration directory.");
     }
 
