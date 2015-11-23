@@ -1453,6 +1453,11 @@ Comment[zh_TW]=音效鈴聲
 Action=Sound
 Sound=Oxygen-Sys-App-Message.ogg
 
+[Event/plasmoidInstallationFailed]
+Name=Widget failed to install
+Comment=A widget could not be installed
+Action=Popup
+
 [Event/plasmoidDeleted]
 Name=Widget deleted
 Name[ar]=حُذفت ودجة
