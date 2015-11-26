@@ -1456,18 +1456,26 @@ Sound=Oxygen-Sys-App-Message.ogg
 [Event/plasmoidInstallationFailed]
 Name=Widget failed to install
 Name[ca]=Ha fallat en instal·lar l'estri
+Name[da]=Widget kunne ikke installeres
+Name[fi]=Sovelman asennus epäonnistui
 Name[gl]=Fallo de instalación dun trebello
 Name[nl]=Widget kan niet geïnstalleerd worden
 Name[pt]=Não foi possível instalar o elemento
 Name[sk]=Zlyhala inštalácia widgetu
+Name[sv]=Installation av grafisk komponent misslyckades
 Name[uk]=Не вдалося встановити віджет
+Name[x-test]=xxWidget failed to installxx
 Comment=A widget could not be installed
 Comment[ca]=No s'ha pogut instal·lar un estri
+Comment[da]=En widget kunne ikke installeres
+Comment[fi]=Sovelmaa ei voitu asentaa
 Comment[gl]=Non foi posíbel instalar un trebello.
 Comment[nl]=Een widget kon niet geïnstalleerd worden
 Comment[pt]=Não foi possível instalar um elemento
 Comment[sk]=Widget nemohol byť nainštalovaný
+Comment[sv]=En grafisk komponent kunde inte installeras
 Comment[uk]=Не вдалося встановити віджет
+Comment[x-test]=xxA widget could not be installedxx
 Action=Popup
 
 [Event/plasmoidDeleted]
