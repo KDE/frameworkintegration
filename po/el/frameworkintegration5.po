@@ -1,0 +1,124 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Dimitris Kardarakos <dimkard@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-10-01 08:25+0000\n"
+"PO-Revision-Date: 2015-11-03 20:18+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:240
+msgid "Opening..."
+msgstr "Άνοιγμα..."
+
+#: platformtheme/kdeplatformfiledialoghelper.cpp:240
+msgid "Saving..."
+msgstr "Αποθήκευση..."
+
+#: platformtheme/kdeplatformtheme.cpp:227
+msgctxt "@action:button"
+msgid "Save All"
+msgstr "Αποθήκευση όλων"
+
+#: platformtheme/kdeplatformtheme.cpp:233
+msgctxt "@action:button"
+msgid "Yes to All"
+msgstr "Ναι σε Όλα"
+
+#: platformtheme/kdeplatformtheme.cpp:237
+msgctxt "@action:button"
+msgid "No to All"
+msgstr "Όχι σε όλα"
+
+#: platformtheme/kdeplatformtheme.cpp:240
+msgctxt "@action:button"
+msgid "Abort"
+msgstr "Εγκατάλειψη"
+
+#: platformtheme/kdeplatformtheme.cpp:242
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Επανάληψη"
+
+#: platformtheme/kdeplatformtheme.cpp:244
+msgctxt "@action:button"
+msgid "Ignore"
+msgstr "Αγνόηση"
+
+#: platformtheme/kdirselectdialog.cpp:132
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "Νέος φάκελος"
+
+#: platformtheme/kdirselectdialog.cpp:137
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Νέος φάκελος"
+
+#: platformtheme/kdirselectdialog.cpp:138
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Δημιουργία νέου φακέλου στο:\n"
+"%1"
+
+#: platformtheme/kdirselectdialog.cpp:168
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "Ένα αρχείο ή φάκελος με όνομα %1 υπάρχει ήδη."
+
+#: platformtheme/kdirselectdialog.cpp:171
+msgid "You do not have permission to create that folder."
+msgstr "Δεν έχετε άδεια να δημιουργήσετε αυτόν τον φάκελο."
+
+#: platformtheme/kdirselectdialog.cpp:285
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr "Επιλογή φακέλου"
+
+#: platformtheme/kdirselectdialog.cpp:294
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "Νέος φάκελος..."
+
+#: platformtheme/kdirselectdialog.cpp:340
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "Νέος φάκελος..."
+
+#: platformtheme/kdirselectdialog.cpp:347
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "Μετακίνηση στα απορρίμματα"
+
+#: platformtheme/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: platformtheme/kdirselectdialog.cpp:363
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "Εμφάνιση κρυφών φακέλων"
+
+#: platformtheme/kdirselectdialog.cpp:370
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Ιδιότητες"
+
+#: platformtheme/kfiletreeview.cpp:192
+msgid "Show Hidden Folders"
+msgstr "Εμφάνιση κρυφών φακέλων"
