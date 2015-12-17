@@ -1476,6 +1476,7 @@ Name[sr@latin]=Propalo instaliranje vidžeta
 Name[sv]=Installation av grafisk komponent misslyckades
 Name[uk]=Не вдалося встановити віджет
 Name[x-test]=xxWidget failed to installxx
+Name[zh_CN]=安装部件失败
 Comment=A widget could not be installed
 Comment[ca]=No s'ha pogut instal·lar un estri
 Comment[ca@valencia]=No s'ha pogut instal·lar un estri
@@ -1498,6 +1499,7 @@ Comment[sr@latin]=Vidžet ne može da se instalira
 Comment[sv]=En grafisk komponent kunde inte installeras
 Comment[uk]=Не вдалося встановити віджет
 Comment[x-test]=xxA widget could not be installedxx
+Comment[zh_CN]=无法安装部件
 Action=Popup
 
 [Event/plasmoidDeleted]
