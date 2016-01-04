@@ -703,6 +703,10 @@ Comment[zh_TW]=發生了非常嚴重的問題，至少造成程式被迫結束
 Action=Popup|Sound
 Sound=Oxygen-Sys-App-Error-Serious.ogg
 
+[Event/applicationcrash]
+Name=Application Crash
+Comment=An application just closed unexpectedly
+Action=Popup
 
 [Event/startkde]
 Name=Login
