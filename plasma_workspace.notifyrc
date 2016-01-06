@@ -705,7 +705,23 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 
 [Event/applicationcrash]
 Name=Application Crash
+Name[ca]=Fallada d'aplicació
+Name[gl]=Quebra dun programa
+Name[nl]=Crash van toepassing
+Name[pt]=Estoiro da Aplicação
+Name[pt_BR]=Falha do aplicativo
+Name[sv]=Programkrasch
+Name[uk]=Аварія програми
+Name[x-test]=xxApplication Crashxx
 Comment=An application just closed unexpectedly
+Comment[ca]=Una aplicació s'ha tancat inesperadament
+Comment[gl]=Un programa pechouse inesperadamente
+Comment[nl]=Een toepassing is zojuist onverwacht afgesloten
+Comment[pt]=Uma aplicação acabou de estoirar de forma inesperada
+Comment[pt_BR]=Uma aplicativo acabou de fechar de forma inesperada
+Comment[sv]=Ett program stängdes just oväntat
+Comment[uk]=Щойно програма неочікувано завершила роботу
+Comment[x-test]=xxAn application just closed unexpectedlyxx
 Action=Popup
 
 [Event/startkde]
