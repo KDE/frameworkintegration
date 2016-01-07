@@ -706,6 +706,7 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 [Event/applicationcrash]
 Name=Application Crash
 Name[ca]=Fallada d'aplicació
+Name[es]=Fallo de aplicación
 Name[gl]=Quebra dun programa
 Name[nl]=Crash van toepassing
 Name[pt]=Estoiro da Aplicação
@@ -715,6 +716,7 @@ Name[uk]=Аварія програми
 Name[x-test]=xxApplication Crashxx
 Comment=An application just closed unexpectedly
 Comment[ca]=Una aplicació s'ha tancat inesperadament
+Comment[es]=Una aplicación se acaba de cerrar de forma no esperada
 Comment[gl]=Un programa pechouse inesperadamente
 Comment[nl]=Een toepassing is zojuist onverwacht afgesloten
 Comment[pt]=Uma aplicação acabou de estoirar de forma inesperada
