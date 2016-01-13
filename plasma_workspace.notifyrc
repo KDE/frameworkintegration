@@ -726,6 +726,7 @@ Name[x-test]=xxApplication Crashxx
 Comment=An application just closed unexpectedly
 Comment[ca]=Una aplicació s'ha tancat inesperadament
 Comment[ca@valencia]=Una aplicació s'ha tancat inesperadament
+Comment[de]=Eine Anwendung wurde unerwartet beendet
 Comment[en_GB]=An application just closed unexpectedly
 Comment[es]=Una aplicación se acaba de cerrar de forma no esperada
 Comment[fi]=Ohjelma sulkeutui juuri odottamattomasti
