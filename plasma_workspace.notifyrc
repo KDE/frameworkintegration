@@ -724,6 +724,7 @@ Name[sr@latin]=Pad programa
 Name[sv]=Programkrasch
 Name[uk]=Аварія програми
 Name[x-test]=xxApplication Crashxx
+Name[zh_CN]=应用程序崩溃
 Comment=An application just closed unexpectedly
 Comment[ca]=Una aplicació s'ha tancat inesperadament
 Comment[ca@valencia]=Una aplicació s'ha tancat inesperadament
@@ -745,6 +746,7 @@ Comment[sr@latin]=Program se upravo neočekivano zatvorio
 Comment[sv]=Ett program stängdes just oväntat
 Comment[uk]=Щойно програма неочікувано завершила роботу
 Comment[x-test]=xxAn application just closed unexpectedlyxx
+Comment[zh_CN]=一个应用程序刚刚意外关闭
 Action=Popup
 
 [Event/startkde]
