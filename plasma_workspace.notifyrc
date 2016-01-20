@@ -127,7 +127,7 @@ Sound=Oxygen-Sys-Trash-Emptied.ogg
 
 [Event/Textcompletion: rotation]
 Name=Textcompletion: Rotation
-Name[ar]=إكمال النصّ: دوران
+Name[ar]=إكمال النّصّ: دوران
 Name[bs]=Dopuna teksta: rotacija
 Name[ca]=Compleció del text: rotació
 Name[ca@valencia]=Compleció del text: rotació
@@ -918,7 +918,7 @@ Sound=Oxygen-Sys-Log-Out.ogg
 
 [Event/cancellogout]
 Name=Logout Canceled
-Name[ar]=أُلغِيَ الخروج
+Name[ar]=أُلغيَ الخروج
 Name[bs]=Odjava otkazana
 Name[ca]=S'ha cancel·lat la sortida
 Name[ca@valencia]=S'ha cancel·lat l'eixida
@@ -958,7 +958,7 @@ Name[x-test]=xxLogout Canceledxx
 Name[zh_CN]=注销取消了
 Name[zh_TW]=登出已取消
 Comment=Plasma logout was canceled
-Comment[ar]=أُلغِيَ الخروج من بلازما
+Comment[ar]=أُلغيَ الخروج من بلازما
 Comment[bs]=Plazma odjava je prekinuta
 Comment[ca]=S'ha cancel·lat la sortida del Plasma
 Comment[ca@valencia]=S'ha cancel·lat l'eixida del Plasma
@@ -1167,7 +1167,7 @@ Action=Sound|Taskbar
 
 [Event/messageWarning]
 Name=Warning Message
-Name[ar]=رسالة تحذيريّة
+Name[ar]=رسالة تحذير
 Name[bs]=Upozoravajuća poruka
 Name[ca]=Missatge d'avís
 Name[ca@valencia]=Missatge d'avís
@@ -1250,7 +1250,7 @@ Action=Sound|Taskbar
 
 [Event/messageCritical]
 Name=Critical Message
-Name[ar]=رسالة حرِجة
+Name[ar]=رسالة حرجة
 Name[bs]=Kritična poruka
 Name[ca]=Missatge crític
 Name[ca@valencia]=Missatge crític
@@ -1290,7 +1290,7 @@ Name[x-test]=xxCritical Messagexx
 Name[zh_CN]=严重消息
 Name[zh_TW]=嚴重訊息
 Comment=A critical message is being shown
-Comment[ar]=رسالة حرِجة تظهر
+Comment[ar]=رسالة حرجة تظهر
 Comment[bs]=Prikazana je kritična poruka
 Comment[ca]=Es mostra un missatge crític
 Comment[ca@valencia]=Es mostra un missatge crític
@@ -1373,7 +1373,7 @@ Name[x-test]=xxQuestionxx
 Name[zh_CN]=问题
 Name[zh_TW]=詢問
 Comment=A question is being asked
-Comment[ar]=سؤال يُسأل
+Comment[ar]=سؤال يُطرح
 Comment[bs]=Nešto ste upitani
 Comment[ca]=Es pregunta una qüestió
 Comment[ca@valencia]=Es pregunta una qüestió
