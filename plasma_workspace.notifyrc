@@ -707,6 +707,7 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 Name=Application Crash
 Name[ca]=Fallada d'aplicació
 Name[ca@valencia]=Fallada d'aplicació
+Name[de]=Absturz einer Anwendung
 Name[en_GB]=Application Crash
 Name[es]=Fallo de aplicación
 Name[fi]=Ohjelman kaatuminen
