@@ -292,8 +292,8 @@ QPalette KStyle::standardPalette() const
     return KColorScheme::createApplicationPalette(KSharedConfig::openConfig());
 }
 
-QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption */*option*/,
-                           const QWidget */*widget*/) const
+QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *option,
+                           const QWidget *widget) const
 {
     switch (standardIcon) {
     case QStyle::SP_DesktopIcon:
@@ -409,8 +409,10 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption */*op
         return QIcon::fromTheme(QStringLiteral("audio-volume-muted"));
 
     default:
-        return QIcon();
+        break;
     }
+
+    return QCommonStyle::standardIcon(standardIcon, option, widget);
 }
 
 int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget *widget, QStyleHintReturn *returnData) const
