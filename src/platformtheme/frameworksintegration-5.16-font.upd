@@ -1,5 +1,0 @@
-Version=5
-
-# Update entry in kdeglobals for new font requested by VDG
-Id=frameworksintegration-5.16-font.sh
-Script=frameworksintegration-5.16-font.sh,sh
