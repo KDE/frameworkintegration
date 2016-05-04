@@ -10,6 +10,9 @@ endif()
 
 include_directories( ${Qt5Gui_PRIVATE_INCLUDE_DIRS} )
 
+set(CONFIGFILE "${CMAKE_CURRENT_SOURCE_DIR}/kdeplatformtheme_kdeglobals")
+configure_file(kdeplatformtheme_config.h.in ${CMAKE_CURRENT_BINARY_DIR}/kdeplatformtheme_config.h)
+
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
 macro(FRAMEWORKINTEGRATION_TESTS _testname)
