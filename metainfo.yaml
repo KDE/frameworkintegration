@@ -8,6 +8,8 @@ platforms:
     - name: MacOSX
     - name: Linux
       note: XCB is needed for KStyle
+    - name: FreeBSD
+      note: XCB is needed for KStyle
 portingAid: false
 deprecated: false
 release: true
