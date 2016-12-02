@@ -21,7 +21,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
 set(REQUIRED_QT_VERSION 5.5.0)
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus Widgets)
 
 set(KF5_VERSION "5.29.0") # handled by release scripts
 set(KF5_DEP_VERSION "5.28.0") # handled by release scripts
