@@ -37,6 +37,7 @@ find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Notifications ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Package ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5NewStuff ${KF5_DEP_VERSION} REQUIRED)
 
 find_package(packagekitqt5)
 find_package(AppStreamQt 0.10)
