@@ -265,6 +265,7 @@ Name[zh_CN]=文本补全：没有匹配
 Name[zh_TW]=文字補完：沒有符合
 Comment=No matching completion was found
 Comment[ar]=لم تُعثر على تطابقات
+Comment[ast]=Nun s'alcontró un completáu que concasara
 Comment[bs]=Nije nađeno nijedno poklapanje za dopunu
 Comment[ca]=No s'ha trobat cap compleció coincident
 Comment[ca@valencia]=No s'ha trobat cap compleció coincident
