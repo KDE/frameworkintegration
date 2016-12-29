@@ -24,12 +24,17 @@
 #include <QDebug>
 #include <QStandardPaths>
 
-#include <KNS3/DownloadManager>
+#include <KNSCore/Engine>
 
 int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
+    app.setQuitLockEnabled(false);
     Q_ASSERT(app.arguments().count() == 2);
+
+#ifdef TEST
+    QStandardPaths::setTestModeEnabled(true);
+#endif
 
     const QUrl url(app.arguments().last());
     Q_ASSERT(url.isValid());
@@ -49,33 +54,42 @@ int main(int argc, char** argv)
     const auto providerid = pathParts.at(0);
     const auto entryid = pathParts.at(1);
 
-    KNS3::DownloadManager manager(knsname);
-    manager.fetchEntryById(entryid);
+    KNSCore::Engine engine;
     int installedCount = 0;
 
-    QObject::connect(&manager, &KNS3::DownloadManager::searchResult, &manager, [providerid, entryid, &manager, &installedCount](const KNS3::Entry::List &entries) {
-        qDebug() << "mup" << entries.count();
-        if (entries.isEmpty()) {
-            qWarning() << "Couldn't find" << entryid;
-            QCoreApplication::exit(1);
-        } else foreach(const auto &entry, entries) {
-            qDebug() << "checking..." << entry.id() << entry.status() << entry.providerId();
-            if (entry.status() == KNS3::Entry::Downloadable && providerid == entry.providerId()) {
-                manager.installEntry(entry);
-                installedCount++;
-            }
+    QObject::connect(&engine, &KNSCore::Engine::signalProvidersLoaded, &engine, [&engine, entryid](){
+        engine.fetchEntryById(entryid);
+    });
 
-            if (installedCount == 0) {
-                qDebug() << "nothing to install...";
-                QCoreApplication::exit(0);
-            }
+    QObject::connect(&engine, &KNSCore::Engine::signalError, &engine, [](const QString &error) {
+        qWarning() << "kns error:" << error;
+        QCoreApplication::exit(1);
+    });
+    QObject::connect(&engine, &KNSCore::Engine::signalEntryDetailsLoaded, &engine, [providerid, &engine, &installedCount](const KNSCore::EntryInternal &entry) {
+//         qDebug() << "checking..." << entry.status() << entry.providerId();
+        if (providerid != QUrl(entry.providerId()).host()) {
+            qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
+            QCoreApplication::exit(1);
+        } else if (entry.status() == KNS3::Entry::Downloadable) {
+            qDebug() << "installing...";
+            installedCount++;
+            engine.install(entry);
+        } else if (installedCount == 0) {
+            qDebug() << "already installed.";
+            QCoreApplication::exit(0);
         }
     });
-    QObject::connect(&manager, &KNS3::DownloadManager::entryStatusChanged, &manager, [&manager, &installedCount](const KNS3::Entry &/*entry*/) {
-        installedCount--;
+    QObject::connect(&engine, &KNSCore::Engine::signalEntryChanged, &engine, [&engine, &installedCount](const KNSCore::EntryInternal &entry) {
+        if (entry.status() == KNS3::Entry::Installed) {
+            installedCount--;
+        }
         if (installedCount == 0)
             QCoreApplication::exit(0);
     });
 
+    if (!engine.init(knsname)) {
+        qWarning() << "couldn't initialize" << knsname;
+        return 1;
+    }
     return app.exec();
 }
