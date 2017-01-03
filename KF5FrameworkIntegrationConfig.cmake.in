@@ -1,5 +1,6 @@
 @PACKAGE_INIT@
 
+include(CMakeFindDependencyMacro)
 find_dependency(KF5ConfigWidgets "@KF5_DEP_VERSION@")
 find_dependency(KF5IconThemes "@KF5_DEP_VERSION@")
 
