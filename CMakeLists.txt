@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(FrameworkIntegration)
+set(KF5_VERSION "5.30.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
+project(FrameworkIntegration VERSION ${KF5_VERSION})
 
 include(FeatureSummary)
 find_package(ECM 5.29.0  NO_MODULE)
@@ -23,10 +25,8 @@ include(KDECMakeSettings)
 set(REQUIRED_QT_VERSION 5.5.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus Widgets)
 
-set(KF5_VERSION "5.30.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
 
-ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX FRAMEWORKINTEGRATION
+ecm_setup_version(PROJECT VARIABLE_PREFIX FRAMEWORKINTEGRATION
                   VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/frameworkintegration_version.h"
                   PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5FrameworkIntegrationConfigVersion.cmake"
                   SOVERSION 5)
