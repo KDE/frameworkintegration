@@ -24,7 +24,12 @@
 #include <QDebug>
 #include <QStandardPaths>
 
+#include <KLocalizedString>
+
+#include <KNotifications/KNotification>
+
 #include <KNSCore/Engine>
+#include <KNSCore/QuestionManager>
 
 int main(int argc, char** argv)
 {
@@ -54,8 +59,33 @@ int main(int argc, char** argv)
     const auto providerid = pathParts.at(0);
     const auto entryid = pathParts.at(1);
 
+
     KNSCore::Engine engine;
     int installedCount = 0;
+    QObject::connect(KNSCore::QuestionManager::instance(), &KNSCore::QuestionManager::askQuestion, &engine, [](KNSCore::Question* question){
+        auto discardQuestion = [question]() { question->setResponse(KNSCore::Question::InvalidResponse); };
+        switch(question->questionType()) {
+            case KNSCore::Question::YesNoQuestion: {
+                auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
+                f->setActions({i18n("Yes"), i18n("No")});
+                QObject::connect(f, &KNotification::action1Activated, question, [question](){ question->setResponse(KNSCore::Question::YesResponse); });
+                QObject::connect(f, &KNotification::action2Activated, question, [question](){ question->setResponse(KNSCore::Question::NoResponse); });
+                QObject::connect(f, &KNotification::closed, question, discardQuestion);
+            }   break;
+            case KNSCore::Question::ContinueCancelQuestion: {
+                auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
+                f->setActions({i18n("Continue"), i18n("Cancel")});
+                QObject::connect(f, &KNotification::action1Activated, question, [question](){ question->setResponse(KNSCore::Question::ContinueResponse); });
+                QObject::connect(f, &KNotification::action2Activated, question, [question](){ question->setResponse(KNSCore::Question::CancelResponse); });
+                QObject::connect(f, &KNotification::closed, question, discardQuestion);
+            }   break;
+            case KNSCore::Question::InputTextQuestion:
+            case KNSCore::Question::SelectFromListQuestion:
+            case KNSCore::Question::PasswordQuestion:
+                discardQuestion();
+                break;
+        }
+    });
 
     QObject::connect(&engine, &KNSCore::Engine::signalProvidersLoaded, &engine, [&engine, entryid](){
         engine.fetchEntryById(entryid);
