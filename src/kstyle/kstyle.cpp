@@ -80,7 +80,7 @@ static const char s_schemePropertyName[] = "KDE_COLOR_SCHEME_PATH";
 class ColorSchemeFilter : public QObject
 {
 public:
-    ColorSchemeFilter(QObject *parent = Q_NULLPTR);
+    ColorSchemeFilter(QObject *parent = nullptr);
     bool eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
 private:
     void installColorScheme(QWidget *w);
@@ -116,7 +116,7 @@ void ColorSchemeFilter::installColorScheme(QWidget *w)
     if (atom == XCB_ATOM_NONE) {
         const QByteArray name = QByteArrayLiteral("_KDE_NET_WM_COLOR_SCHEME");
         const xcb_intern_atom_cookie_t cookie = xcb_intern_atom(c, false, name.length(), name.constData());
-        QScopedPointer<xcb_intern_atom_reply_t, QScopedPointerPodDeleter> reply(xcb_intern_atom_reply(c, cookie, Q_NULLPTR));
+        QScopedPointer<xcb_intern_atom_reply_t, QScopedPointerPodDeleter> reply(xcb_intern_atom_reply(c, cookie, nullptr));
         if (!reply.isNull()) {
             atom = reply->atom;
         } else {
