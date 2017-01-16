@@ -131,7 +131,7 @@ protected:
 
 public:
 //@{
-    int pixelMetric(PixelMetric m, const QStyleOption *opt = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+    int pixelMetric(PixelMetric m, const QStyleOption *opt = nullptr, const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
     virtual int styleHint(StyleHint hint, const QStyleOption *opt,
                           const QWidget *w, QStyleHintReturn *returnData) const Q_DECL_OVERRIDE;
 
@@ -140,8 +140,8 @@ public:
 
     QPalette standardPalette() const Q_DECL_OVERRIDE;
 
-    virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = 0,
-                               const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+    virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr,
+                               const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
 //@}
 private:
     KStylePrivate *const d;

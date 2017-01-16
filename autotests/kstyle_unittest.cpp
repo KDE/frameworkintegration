@@ -71,10 +71,10 @@ private Q_SLOTS:
         QToolBar *toolbar = new QToolBar();
         QToolButton *btn = new QToolButton(toolbar);
 
-        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, 0, btn), (int)  Qt::ToolButtonTextOnly);
+        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int)  Qt::ToolButtonTextOnly);
 
         toolbar->setProperty("otherToolbar", true);
-        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, 0, btn), (int) Qt::ToolButtonTextUnderIcon);
+        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int) Qt::ToolButtonTextUnderIcon);
     }
 };
 

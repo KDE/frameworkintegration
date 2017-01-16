@@ -29,7 +29,7 @@ class KConfig;
 class KMessageBoxDontAskAgainConfigStorage : public KMessageBoxDontAskAgainInterface
 {
 public:
-    KMessageBoxDontAskAgainConfigStorage() : KMessageBox_againConfig(0) {}
+    KMessageBoxDontAskAgainConfigStorage() : KMessageBox_againConfig(nullptr) {}
     virtual ~KMessageBoxDontAskAgainConfigStorage() {}
 
     bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) Q_DECL_OVERRIDE;
