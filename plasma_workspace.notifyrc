@@ -264,7 +264,7 @@ Name[x-test]=xxTextcompletion: No Matchxx
 Name[zh_CN]=文本补全：没有匹配
 Name[zh_TW]=文字補完：沒有符合
 Comment=No matching completion was found
-Comment[ar]=لم تُعثر على تطابقات
+Comment[ar]=لم توجد تطابقات
 Comment[ast]=Nun s'alcontró un completáu que concasara
 Comment[bs]=Nije nađeno nijedno poklapanje za dopunu
 Comment[ca]=No s'ha trobat cap compleció coincident
@@ -752,6 +752,7 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 
 [Event/applicationcrash]
 Name=Application Crash
+Name[ar]=انهيار التّطبيقات
 Name[ast]=Casque d'aplicación
 Name[ca]=Fallada d'aplicació
 Name[ca@valencia]=Fallada d'aplicació
@@ -786,6 +787,7 @@ Name[x-test]=xxApplication Crashxx
 Name[zh_CN]=应用程序崩溃
 Name[zh_TW]=應用程式當掉
 Comment=An application just closed unexpectedly
+Comment[ar]=أُغلق تطبيق ما للتّو بشكل غير متوقّع
 Comment[ast]=Una aplicación ta acabante zarrase inesperadamente
 Comment[ca]=Una aplicació s'ha tancat inesperadament
 Comment[ca@valencia]=Una aplicació s'ha tancat inesperadament
@@ -1626,6 +1628,7 @@ Sound=Oxygen-Sys-App-Message.ogg
 
 [Event/plasmoidInstallationFailed]
 Name=Widget failed to install
+Name[ar]=فشل تثبيت الودجات
 Name[ast]=El widget falló al instalase
 Name[ca]=Ha fallat en instal·lar l'estri
 Name[ca@valencia]=Ha fallat en instal·lar l'estri
@@ -1660,6 +1663,7 @@ Name[x-test]=xxWidget failed to installxx
 Name[zh_CN]=安装部件失败
 Name[zh_TW]=Widget 安裝失敗
 Comment=A widget could not be installed
+Comment[ar]=تعذّر تثبيت أحد الودجات
 Comment[ast]=Nun pudo instalase un widget
 Comment[ca]=No s'ha pogut instal·lar un estri
 Comment[ca@valencia]=No s'ha pogut instal·lar un estri
