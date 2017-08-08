@@ -53,6 +53,7 @@
 #include <QStyleOption>
 #include <QPushButton>
 #include <QToolBar>
+#include <QShortcut>
 
 #include <kconfiggroup.h>
 #include <kiconloader.h>
@@ -274,8 +275,10 @@ void KStyle::polish(QWidget *w)
 
     if (QDialogButtonBox *box = qobject_cast<QDialogButtonBox *>(w)) {
         QPushButton *button = box->button(QDialogButtonBox::Ok);
-        if (button && button->shortcut().isEmpty()) {
-            button->setShortcut(Qt::CTRL | Qt::Key_Return);
+
+        if (button) {
+            auto shortcut = new QShortcut(Qt::CTRL | Qt::Key_Return, button);
+            QObject::connect(shortcut, &QShortcut::activated, button, &QPushButton::click);
         }
     }
 

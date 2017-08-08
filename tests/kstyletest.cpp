@@ -45,11 +45,18 @@ void showDialog()
     dialog->setLayout(new QVBoxLayout);
 
     QDialogButtonBox *box = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, dialog.data());
-    QObject::connect(box, SIGNAL(accepted()), dialog.data(), SLOT(accept()));
-    QObject::connect(box, SIGNAL(rejected()), dialog.data(), SLOT(reject()));
 
-    dialog->layout()->addWidget(new QTextEdit(dialog.data()));
+    //Useful to change the text because setting the text triggers setShortcut
+    box->button(QDialogButtonBox::Ok)->setText(QLatin1String("Send"));
+    QObject::connect(box, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
+    QObject::connect(box, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
+
+    auto usefulWidget = new QTextEdit(dialog.data());
+    dialog->layout()->addWidget(usefulWidget);
     dialog->layout()->addWidget(box);
+
+    //Make sure we test ctrl+return acceptance with the focus on the button
+    usefulWidget->setFocus();
 
     dialog->resize(200, 200);
     dialog->exec();
