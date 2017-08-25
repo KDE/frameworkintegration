@@ -410,6 +410,14 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
         return QIcon::fromTheme(QStringLiteral("audio-volume-medium"));
     case QStyle::SP_MediaVolumeMuted:
         return QIcon::fromTheme(QStringLiteral("audio-volume-muted"));
+    case SP_LineEditClearButton: {
+        const bool rtl = (option && option->direction == Qt::RightToLeft) || (!option && QApplication::isRightToLeft());
+
+        const QString directionalThemeName = rtl
+            ? QStringLiteral("edit-clear-locationbar-ltr") : QStringLiteral("edit-clear-locationbar-rtl");
+
+        return QIcon::fromTheme(directionalThemeName, QIcon::fromTheme(QStringLiteral("edit-clear")));
+    }
 
     default:
         break;
