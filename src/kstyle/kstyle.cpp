@@ -371,7 +371,7 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
     case QStyle::SP_DialogResetButton:
         return QIcon::fromTheme(QStringLiteral("document-revert"));
     case QStyle::SP_DialogDiscardButton:
-        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
+        return QIcon::fromTheme(QStringLiteral("edit-delete"));
     case QStyle::SP_DialogYesButton:
         return QIcon::fromTheme(QStringLiteral("dialog-ok-apply"));
     case QStyle::SP_DialogNoButton:
