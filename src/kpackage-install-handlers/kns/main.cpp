@@ -20,6 +20,7 @@
 
 #include <QCoreApplication>
 #include <QUrl>
+#include <QUrlQuery>
 #include <QTimer>
 #include <QDebug>
 #include <QStandardPaths>
@@ -58,6 +59,18 @@ int main(int argc, char** argv)
     }
     const auto providerid = pathParts.at(0);
     const auto entryid = pathParts.at(1);
+    int linkid = 1;
+    if (url.hasQuery()) {
+        QUrlQuery query(url);
+        if (query.hasQueryItem(QLatin1String("linkid"))) {
+            bool ok;
+            linkid = query.queryItemValue(QLatin1String("linkid")).toInt(&ok);
+            if (!ok) {
+                qWarning() << "linkid is not an integer" << url << pathParts;
+                return 1;
+            }
+        }
+    }
 
 
     KNSCore::Engine engine;
@@ -95,7 +108,7 @@ int main(int argc, char** argv)
         qWarning() << "kns error:" << error;
         QCoreApplication::exit(1);
     });
-    QObject::connect(&engine, &KNSCore::Engine::signalEntryDetailsLoaded, &engine, [providerid, &engine, &installedCount](const KNSCore::EntryInternal &entry) {
+    QObject::connect(&engine, &KNSCore::Engine::signalEntryDetailsLoaded, &engine, [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry) {
 //         qDebug() << "checking..." << entry.status() << entry.providerId();
         if (providerid != QUrl(entry.providerId()).host()) {
             qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
@@ -103,7 +116,7 @@ int main(int argc, char** argv)
         } else if (entry.status() == KNS3::Entry::Downloadable) {
             qDebug() << "installing...";
             installedCount++;
-            engine.install(entry);
+            engine.install(entry, linkid);
         } else if (installedCount == 0) {
             qDebug() << "already installed.";
             QCoreApplication::exit(0);
