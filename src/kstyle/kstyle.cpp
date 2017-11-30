@@ -443,9 +443,8 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         return g.readEntry("GraphicEffectsLevel", true);
     }
 
-    #if QT_VERSION >= QT_VERSION_CHECK(5,5,0)
-    case QStyle::SH_Menu_SubMenuSloppyCloseTimeout: return 300;
-    #endif
+    case QStyle::SH_Menu_SubMenuSloppyCloseTimeout:
+        return 300;
 
     case SH_ToolButtonStyle: {
         KConfigGroup g(KSharedConfig::openConfig(), "Toolbar style");
