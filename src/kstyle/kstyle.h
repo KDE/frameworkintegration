@@ -63,7 +63,7 @@ class KSTYLE_EXPORT KStyle: public QCommonStyle
 
 public:
     KStyle();
-    ~KStyle();
+    ~KStyle() Q_DECL_OVERRIDE;
 
     /**
      * Runtime element extension

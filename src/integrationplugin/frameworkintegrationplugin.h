@@ -30,7 +30,7 @@ class KMessageBoxDontAskAgainConfigStorage : public KMessageBoxDontAskAgainInter
 {
 public:
     KMessageBoxDontAskAgainConfigStorage() : KMessageBox_againConfig(nullptr) {}
-    virtual ~KMessageBoxDontAskAgainConfigStorage() {}
+    ~KMessageBoxDontAskAgainConfigStorage() Q_DECL_OVERRIDE {}
 
     bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) Q_DECL_OVERRIDE;
     bool shouldBeShownContinue(const QString &dontShowAgainName) Q_DECL_OVERRIDE;

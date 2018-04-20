@@ -26,10 +26,6 @@
 #include <qplugin.h>
 #include <QDebug>
 
-#if QT_VERSION < 0x050000
-Q_EXPORT_PLUGIN2(frameworkintegrationplugin, KFrameworkIntegrationPlugin)
-#endif
-
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownYesNo(const QString &dontShowAgainName,
         KMessageBox::ButtonCode &result)
 {
