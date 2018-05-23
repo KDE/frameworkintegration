@@ -82,7 +82,7 @@ class ColorSchemeFilter : public QObject
 {
 public:
     ColorSchemeFilter(QObject *parent = nullptr);
-    bool eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *object, QEvent *event) override;
 private:
     void installColorScheme(QWidget *w);
 };

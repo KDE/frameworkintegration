@@ -63,7 +63,7 @@ class KSTYLE_EXPORT KStyle: public QCommonStyle
 
 public:
     KStyle();
-    ~KStyle() Q_DECL_OVERRIDE;
+    ~KStyle() override;
 
     /**
      * Runtime element extension
@@ -131,17 +131,17 @@ protected:
 
 public:
 //@{
-    int pixelMetric(PixelMetric m, const QStyleOption *opt = nullptr, const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
+    int pixelMetric(PixelMetric m, const QStyleOption *opt = nullptr, const QWidget *widget = nullptr) const override;
     virtual int styleHint(StyleHint hint, const QStyleOption *opt,
-                          const QWidget *w, QStyleHintReturn *returnData) const Q_DECL_OVERRIDE;
+                          const QWidget *w, QStyleHintReturn *returnData) const override;
 
-    void polish(QWidget *) Q_DECL_OVERRIDE;
+    void polish(QWidget *) override;
     using  QCommonStyle::polish; //! needed to avoid warnings at compilation time
 
-    QPalette standardPalette() const Q_DECL_OVERRIDE;
+    QPalette standardPalette() const override;
 
     virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr,
-                               const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
+                               const QWidget *widget = nullptr) const override;
 //@}
 private:
     KStylePrivate *const d;

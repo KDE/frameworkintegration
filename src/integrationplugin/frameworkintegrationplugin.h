@@ -30,15 +30,15 @@ class KMessageBoxDontAskAgainConfigStorage : public KMessageBoxDontAskAgainInter
 {
 public:
     KMessageBoxDontAskAgainConfigStorage() : KMessageBox_againConfig(nullptr) {}
-    ~KMessageBoxDontAskAgainConfigStorage() Q_DECL_OVERRIDE {}
+    ~KMessageBoxDontAskAgainConfigStorage() override {}
 
-    bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) Q_DECL_OVERRIDE;
-    bool shouldBeShownContinue(const QString &dontShowAgainName) Q_DECL_OVERRIDE;
-    void saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result) Q_DECL_OVERRIDE;
-    void saveDontShowAgainContinue(const QString &dontShowAgainName) Q_DECL_OVERRIDE;
-    void enableAllMessages() Q_DECL_OVERRIDE;
-    void enableMessage(const QString &dontShowAgainName) Q_DECL_OVERRIDE;
-    void setConfig(KConfig *cfg) Q_DECL_OVERRIDE
+    bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) override;
+    bool shouldBeShownContinue(const QString &dontShowAgainName) override;
+    void saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result) override;
+    void saveDontShowAgainContinue(const QString &dontShowAgainName) override;
+    void enableAllMessages() override;
+    void enableMessage(const QString &dontShowAgainName) override;
+    void setConfig(KConfig *cfg) override
     {
         KMessageBox_againConfig = cfg;
     }
@@ -50,7 +50,7 @@ private:
 class KMessageBoxNotify : public KMessageBoxNotifyInterface
 {
 public:
-    void sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget *parent) Q_DECL_OVERRIDE;
+    void sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget *parent) override;
 };
 
 class KFrameworkIntegrationPlugin : public QObject
