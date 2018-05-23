@@ -55,9 +55,7 @@ public:
 
 class KFrameworkIntegrationPlugin : public QObject
 {
-#if QT_VERSION >= 0x050000
     Q_PLUGIN_METADATA(IID "org.kde.FrameworkIntegrationPlugin")
-#endif
     Q_OBJECT
 public:
 
