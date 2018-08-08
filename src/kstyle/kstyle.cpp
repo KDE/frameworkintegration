@@ -353,7 +353,8 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
     case QStyle::SP_MessageBoxCritical:
         return QIcon::fromTheme(QStringLiteral("dialog-error"));
     case QStyle::SP_MessageBoxQuestion:
-        return QIcon::fromTheme(QStringLiteral("dialog-information"));
+        // This used to be dialog-information for a long time, so keep it as a fallback
+        return QIcon::fromTheme(QStringLiteral("dialog-question"), QIcon::fromTheme(QStringLiteral("dialog-information")));
     case QStyle::SP_DialogOkButton:
         return QIcon::fromTheme(QStringLiteral("dialog-ok"));
     case QStyle::SP_DialogCancelButton:
