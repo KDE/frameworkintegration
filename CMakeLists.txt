@@ -47,7 +47,7 @@ if (BUILD_KPACKAGE_INSTALL_HANDLERS)
    find_package(packagekitqt5)
    find_package(AppStreamQt 0.10.4)
 endif()
-#add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
 
 add_subdirectory(src)
 if (BUILD_TESTING)
