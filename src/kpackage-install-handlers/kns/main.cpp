@@ -24,6 +24,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QStandardPaths>
+#include <QFile>
 
 #include <KLocalizedString>
 
@@ -46,7 +47,15 @@ int main(int argc, char** argv)
     Q_ASSERT(url.isValid());
     Q_ASSERT(url.scheme() == QLatin1String("kns"));
 
-    const auto knsname = QStandardPaths::locate(QStandardPaths::GenericConfigLocation, url.host());
+    QString knsname;
+    for (const auto &location : KNSCore::Engine::configSearchLocations()) {
+        QString candidate = location + QLatin1Char('/') + url.host();
+        if (QFile::exists(candidate)) {
+            knsname = candidate;
+            break;
+        }
+    }
+
     if (knsname.isEmpty()) {
         qWarning() << "couldn't find knsrc file for" << url.host();
         return 1;
