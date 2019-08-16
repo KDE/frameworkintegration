@@ -239,6 +239,7 @@ Sound=Oxygen-Sys-List-End.ogg
 [Event/Textcompletion: no match]
 Name=Textcompletion: No Match
 Name[ar]=إكمال النص: لا تطابق
+Name[ast]=Completáu de testu: Nun hai coincidencies
 Name[bs]=Dopuna teksta: nema poklapanja
 Name[ca]=Compleció del text: sense coincidència
 Name[ca@valencia]=Compleció del text: sense coincidència
@@ -283,6 +284,7 @@ Name[zh_CN]=文本补全：没有匹配
 Name[zh_TW]=文字補完：沒有符合
 Comment=No matching completion was found
 Comment[ar]=لم توجد تطابقات إكمال
+Comment[ast]=Nun s'alcontró denguna coincidencia que concasare
 Comment[bs]=Nije nađeno nijedno poklapanje za dopunu
 Comment[ca]=No s'ha trobat cap compleció coincident
 Comment[ca@valencia]=No s'ha trobat cap compleció coincident
@@ -331,6 +333,7 @@ Sound=Oxygen-Sys-List-Match-No.ogg
 [Event/Textcompletion: partial match]
 Name=Textcompletion: Partial Match
 Name[ar]=إكمال النص: تطابق جزئي
+Name[ast]=Completáu de testu: Coincidencia parcial
 Name[bs]=Dopuna teksta: delimično poklapanje
 Name[ca]=Compleció del text: coincidència parcial
 Name[ca@valencia]=Compleció del text: coincidència parcial
@@ -1746,6 +1749,7 @@ Sound=Oxygen-Sys-App-Message.ogg
 [Event/plasmoidInstallationFailed]
 Name=Widget failed to install
 Name[ar]=فشل تثبيت الودجات
+Name[ast]=Falló la instalación
 Name[ca]=Ha fallat en instal·lar l'estri
 Name[ca@valencia]=Ha fallat en instal·lar el giny («widget»)
 Name[cs]=Instalace widgetu selhala
