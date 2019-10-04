@@ -371,7 +371,7 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
     case QStyle::SP_DialogApplyButton:
         return QIcon::fromTheme(QStringLiteral("dialog-ok-apply"));
     case QStyle::SP_DialogResetButton:
-        return QIcon::fromTheme(QStringLiteral("document-revert"));
+        return QIcon::fromTheme(QStringLiteral("edit-undo"));
     case QStyle::SP_DialogDiscardButton:
         return QIcon::fromTheme(QStringLiteral("edit-delete"));
     case QStyle::SP_DialogYesButton:
@@ -420,6 +420,22 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
 
         return QIcon::fromTheme(directionalThemeName, QIcon::fromTheme(QStringLiteral("edit-clear")));
     }
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    case QStyle::SP_DialogYesToAllButton:
+        return QIcon::fromTheme(QStringLiteral("dialog-ok"));
+    case QStyle::SP_DialogNoToAllButton:
+        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
+    case QStyle::SP_DialogSaveAllButton:
+        return QIcon::fromTheme(QStringLiteral("document-save-all"));
+    case QStyle::SP_DialogAbortButton:
+        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
+    case QStyle::SP_DialogRetryButton:
+        return QIcon::fromTheme(QStringLiteral("view-refresh"));
+    case QStyle::SP_DialogIgnoreButton:
+        return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
+    case QStyle::SP_RestoreDefaultsButton:
+        return QIcon::fromTheme(QStringLiteral("document-revert"));
+#endif
 
     default:
         break;
