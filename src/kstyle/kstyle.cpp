@@ -104,7 +104,8 @@ bool ColorSchemeFilter::eventFilter(QObject *object, QEvent *event)
 
 void ColorSchemeFilter::installColorScheme(QWidget *w)
 {
-    if (!w || !w->isTopLevel()) {
+    // ensure we don't call winId() on non-native widgets, bug 412675
+    if (!w || !w->isTopLevel() || !w->windowHandle()) {
         return;
     }
 #if HAVE_X11
