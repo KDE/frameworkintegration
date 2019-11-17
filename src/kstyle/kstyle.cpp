@@ -499,6 +499,11 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
 
         return d->styleElements.value(widget->objectName(), 0);
 
+    case SH_ScrollBar_LeftClickAbsolutePosition: {
+        KConfigGroup g(KSharedConfig::openConfig(), "KDE");
+        return !g.readEntry("ScrollbarLeftClickNavigatesByPage", true);
+    }
+
     default:
         break;
     };
