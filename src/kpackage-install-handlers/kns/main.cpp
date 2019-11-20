@@ -113,8 +113,8 @@ int main(int argc, char** argv)
         engine.fetchEntryById(entryid);
     });
 
-    QObject::connect(&engine, &KNSCore::Engine::signalError, &engine, [](const QString &error) {
-        qWarning() << "kns error:" << error;
+    QObject::connect(&engine, &KNSCore::Engine::signalErrorCode, &engine, [](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata) {
+        qWarning() << "kns error:" << errorCode << message << metadata;
         QCoreApplication::exit(1);
     });
     QObject::connect(&engine, &KNSCore::Engine::signalEntryDetailsLoaded, &engine, [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry) {
