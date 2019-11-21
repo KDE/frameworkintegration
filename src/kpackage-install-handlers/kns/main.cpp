@@ -33,9 +33,13 @@
 #include <KNSCore/Engine>
 #include <KNSCore/QuestionManager>
 
+#include "knshandlerversion.h"
+
 int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
+    app.setApplicationName(QLatin1String("kpackage-knshandler"));
+    app.setApplicationVersion(knshandlerversion);
     app.setQuitLockEnabled(false);
     Q_ASSERT(app.arguments().count() == 2);
 

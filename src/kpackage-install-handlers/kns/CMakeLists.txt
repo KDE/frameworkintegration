@@ -1,3 +1,4 @@
+configure_file(knshandlerversion.h.in knshandlerversion.h)
 add_executable(knshandler main.cpp)
 target_link_libraries(knshandler KF5::NewStuffCore KF5::I18n KF5::Notifications Qt5::Xml)
 
