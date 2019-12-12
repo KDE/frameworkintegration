@@ -1,19 +1,3 @@
-
-find_package(XCB COMPONENTS XCB)
-set_package_properties(XCB PROPERTIES
-    DESCRIPTION "X protocol C-language Binding"
-    URL "http://xcb.freedesktop.org"
-    TYPE OPTIONAL
-    PURPOSE "Required to pass style properties to native Windows on X11 Platform"
-)
-
-if(NOT APPLE)
-  set(HAVE_X11 ${XCB_XCB_FOUND})
-  if (XCB_XCB_FOUND)
-    find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED X11Extras)
-  endif()
-endif()
-
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5Style")
 
@@ -34,10 +18,6 @@ target_link_libraries(KF5Style
         KF5::ConfigWidgets
         KF5::IconThemes
 )
-
-if(HAVE_X11)
-  target_link_libraries(KF5Style PRIVATE Qt5::X11Extras ${XCB_XCB_LIBRARY})
-endif()
 
 set_target_properties(KF5Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION_STRING}
                                           SOVERSION ${FRAMEWORKINTEGRATION_SOVERSION}
