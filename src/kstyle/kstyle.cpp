@@ -68,73 +68,6 @@
 
 static const QStyle::StyleHint SH_KCustomStyleElement = (QStyle::StyleHint)0xff000001;
 static const int X_KdeBase = 0xff000000;
-static const char s_schemePropertyName[] = "KDE_COLOR_SCHEME_PATH";
-
-/**
- * An event filter intended to be used for all toplevel QWidgets.
- * The filter checks for Show and PaletteChange events and passes the
- * KDE_COLOR_SCHEME_PATH property on the QApplication to the native window.
- * The application property is set by e.g. the KColorSchemeManager and the
- * information is needed by KDE's window manager to use the same color scheme
- * on e.g. the window decoration to provide a consistent look and feel.
- */
-class ColorSchemeFilter : public QObject
-{
-public:
-    ColorSchemeFilter(QObject *parent = nullptr);
-    bool eventFilter(QObject *object, QEvent *event) override;
-private:
-    void installColorScheme(QWidget *w);
-};
-
-ColorSchemeFilter::ColorSchemeFilter(QObject *parent)
-    : QObject(parent)
-{
-}
-
-bool ColorSchemeFilter::eventFilter(QObject *object, QEvent *event)
-{
-    QWidget *w = static_cast<QWidget*>(object);
-    if ((event->type() == QEvent::Show && qApp->property(s_schemePropertyName).isValid()) ||
-            (event->type() == QEvent::PaletteChange)) {
-        installColorScheme(w);
-    }
-    return QObject::eventFilter(object, event);
-}
-
-void ColorSchemeFilter::installColorScheme(QWidget *w)
-{
-    // ensure we don't call winId() on non-native widgets, bug 412675
-    if (!w || !w->isTopLevel() || !w->windowHandle()) {
-        return;
-    }
-#if HAVE_X11
-    static const bool s_x11 = QX11Info::isPlatformX11();
-    if (!s_x11) {
-        return;
-    }
-    static xcb_atom_t atom = XCB_ATOM_NONE;
-    xcb_connection_t *c = QX11Info::connection();
-    if (atom == XCB_ATOM_NONE) {
-        const QByteArray name = QByteArrayLiteral("_KDE_NET_WM_COLOR_SCHEME");
-        const xcb_intern_atom_cookie_t cookie = xcb_intern_atom(c, false, name.length(), name.constData());
-        QScopedPointer<xcb_intern_atom_reply_t, QScopedPointerPodDeleter> reply(xcb_intern_atom_reply(c, cookie, nullptr));
-        if (!reply.isNull()) {
-            atom = reply->atom;
-        } else {
-            // no point in continuing, we don't have the atom
-            return;
-        }
-    }
-    const QString path = qApp->property(s_schemePropertyName).toString();
-    if (path.isEmpty()) {
-        xcb_delete_property(c, w->winId(), atom);
-    } else {
-        xcb_change_property(c, XCB_PROP_MODE_REPLACE, w->winId(), atom, XCB_ATOM_STRING,
-                            8, path.size(), qPrintable(path));
-    }
-#endif
-}
 
 class KStylePrivate
 {
@@ -143,11 +76,9 @@ public:
 
     QHash<QString, int> styleElements;
     int hintCounter, controlCounter, subElementCounter;
-    QScopedPointer<ColorSchemeFilter> colorSchemeFilter;
 };
 
 KStylePrivate::KStylePrivate()
-    : colorSchemeFilter(new ColorSchemeFilter())
 {
     controlCounter = subElementCounter = X_KdeBase;
     hintCounter = X_KdeBase + 1; //sic! X_KdeBase is covered by SH_KCustomStyleElement
@@ -282,12 +213,6 @@ void KStyle::polish(QWidget *w)
             QObject::connect(shortcut, &QShortcut::activated, button, &QPushButton::click);
         }
     }
-
-    // install the event filter to pass the color scheme app property to all toplevel native windows
-    if (w->isTopLevel()) {
-        w->installEventFilter(d->colorSchemeFilter.data());
-    }
-
     QCommonStyle::polish(w);
 }
 
