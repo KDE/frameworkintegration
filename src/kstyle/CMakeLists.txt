@@ -1,8 +1,6 @@
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5Style")
 
-configure_file(config-kstyle.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kstyle.h )
-
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
 add_library(KF5Style kstyle.cpp)

@@ -58,11 +58,6 @@
 #include <kconfiggroup.h>
 #include <kiconloader.h>
 #include <kcolorscheme.h>
-#include <config-kstyle.h>
-#if HAVE_X11
-#include <QX11Info>
-#include <xcb/xcb.h>
-#endif
 
 // ----------------------------------------------------------------------------
 
