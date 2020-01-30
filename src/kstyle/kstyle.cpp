@@ -57,6 +57,7 @@
 
 #include <kconfiggroup.h>
 #include <kiconloader.h>
+#include <KMessageWidget>
 #include <kcolorscheme.h>
 
 // ----------------------------------------------------------------------------
@@ -207,6 +208,27 @@ void KStyle::polish(QWidget *w)
             auto shortcut = new QShortcut(Qt::CTRL | Qt::Key_Return, button);
             QObject::connect(shortcut, &QShortcut::activated, button, &QPushButton::click);
         }
+    }
+    if (auto messageWidget = qobject_cast<KMessageWidget*>(w)) {
+        KColorScheme scheme;
+        QColor color;
+        QPalette palette = messageWidget->palette();
+        switch (messageWidget->messageType()) {
+        case KMessageWidget::Positive:
+            color = scheme.foreground(KColorScheme::PositiveText).color();
+            break;
+        case KMessageWidget::Information:
+            color = scheme.foreground(KColorScheme::ActiveText).color();
+            break;
+        case KMessageWidget::Warning:
+            color = scheme.foreground(KColorScheme::NeutralText).color();
+            break;
+        case KMessageWidget::Error:
+            color = scheme.foreground(KColorScheme::NegativeText).color();
+            break;
+        }
+        palette.setColor(QPalette::Window, color);
+        messageWidget->setPalette(palette);
     }
     QCommonStyle::polish(w);
 }
