@@ -65,7 +65,11 @@ int main(int argc, char** argv)
         return 1;
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     const auto pathParts = url.path().split(QLatin1Char('/'), QString::SkipEmptyParts);
+#else
+    const auto pathParts = url.path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
+#endif
     if (pathParts.size() != 2) {
         qWarning() << "wrong format in the url path" << url << pathParts;
         return 1;
