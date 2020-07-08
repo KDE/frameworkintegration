@@ -21,8 +21,8 @@
 #define FRAMEWORKINTEGRATIONPLUGIN_H
 
 #include <QObject>
-#include <kmessageboxdontaskagaininterface.h>
-#include <kmessageboxnotifyinterface.h>
+#include <KMessageBoxDontAskAgainInterface>
+#include <KMessageBoxNotifyInterface>
 
 class KConfig;
 

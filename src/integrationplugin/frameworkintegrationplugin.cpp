@@ -19,9 +19,9 @@
  */
 
 #include "frameworkintegrationplugin.h"
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
-#include <knotification.h>
+#include <KConfigGroup>
+#include <KSharedConfig>
+#include <KNotification>
 
 #include <qplugin.h>
 #include <QDebug>

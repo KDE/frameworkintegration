@@ -55,10 +55,10 @@
 #include <QToolBar>
 #include <QShortcut>
 
-#include <kconfiggroup.h>
-#include <kiconloader.h>
+#include <KConfigGroup>
+#include <KIconLoader>
 #include <KMessageWidget>
-#include <kcolorscheme.h>
+#include <KColorScheme>
 
 // ----------------------------------------------------------------------------
 
