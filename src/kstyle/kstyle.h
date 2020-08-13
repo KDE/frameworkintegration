@@ -1,39 +1,31 @@
-/**
- * KStyle for KDE5 (KDE Integration)
- * Copyright (C) 2013 Alejandro Fiestas Olivares <afiestas@kde.org>
- *
- * KStyle for KDE4
- * Copyright (C) 2004-2005 Maksim Orlovich <maksim@kde.org>
- * Copyright (C) 2005,2006 Sandro Giessl <giessl@kde.org>
- *
- * Based in part on the following software:
- *  KStyle for KDE3
- *      Copyright (C) 2001-2002 Karol Szwed <gallium@kde.org>
- *      Portions  (C) 1998-2000 TrollTech AS
- *  Keramik for KDE3,
- *      Copyright (C) 2002      Malte Starostik   <malte@kde.org>
- *                (C) 2002-2003 Maksim Orlovich  <maksim@kde.org>
- *      Portions  (C) 2001-2002 Karol Szwed     <gallium@kde.org>
- *                (C) 2001-2002 Fredrik Höglund <fredrik@kde.org>
- *                (C) 2000 Daniel M. Duley       <mosfet@kde.org>
- *                (C) 2000 Dirk Mueller         <mueller@kde.org>
- *                (C) 2001 Martijn Klingens    <klingens@kde.org>
- *                (C) 2003 Sandro Giessl      <sandro@giessl.com>
- *  This library is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU Library General Public
- *  License as published by the Free Software Foundation; either
- *  version 2 of the License, or (at your option) any later version.
- *
- *  This library is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- *  Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this library; see the file COPYING.LIB.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
- * Boston, MA 02110-1301, USA.
- */
+/*
+    KStyle for KDE5 (KDE Integration)
+        SPDX-FileCopyrightText: 2013 Alejandro Fiestas Olivares <afiestas@kde.org>
+
+    KStyle for KDE4
+        SPDX-FileCopyrightText: 2004-2005 Maksim Orlovich <maksim@kde.org>
+        SPDX-FileCopyrightText: 2005, 2006 Sandro Giessl <giessl@kde.org>
+
+    Based in part on the following software:
+
+    KStyle for KDE3
+        SPDX-FileCopyrightText: 2001-2002 Karol Szwed <gallium@kde.org>
+    Portions
+        SPDX-FileCopyrightText: 1998-2000 TrollTech AS
+
+    Keramik for KDE3,
+        SPDX-FileCopyrightText: 2002 Malte Starostik <malte@kde.org>
+        SPDX-FileCopyrightText: 2002-2003 Maksim Orlovich  <maksim@kde.org>
+    Portions
+        SPDX-FileCopyrightText: 2001-2002 Karol Szwed <gallium@kde.org>
+        SPDX-FileCopyrightText: 2001-2002 Fredrik Höglund <fredrik@kde.org>
+        SPDX-FileCopyrightText: 2000 Daniel M. Duley <mosfet@kde.org>
+        SPDX-FileCopyrightText: 2000 Dirk Mueller <mueller@kde.org>
+        SPDX-FileCopyrightText: 2001 Martijn Klingens <klingens@kde.org>
+        SPDX-FileCopyrightText: 2003 Sandro Giessl <sandro@giessl.com>
+
+    SPDX-License-Identifier: LGPL-2.0-or-later
+*/
 
 #ifndef KDE_KSTYLE_H
 #define KDE_KSTYLE_H
