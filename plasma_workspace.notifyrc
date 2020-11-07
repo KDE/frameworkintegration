@@ -705,6 +705,7 @@ Name[zh_CN]=警告
 Name[zh_TW]=警告
 Comment=There was an error in the program which may cause problems
 Comment[ar]=حدث خطأ في البرنامج مما تسبّب بمشاكل
+Comment[ast]=Hebo un fallu nel programa que podría causar problemes
 Comment[az]=Proqramda problem yaradacaq xəta baş verdi
 Comment[bs]=Došlo je do greške u programu koja može izazvati probleme
 Comment[ca]=S'ha produït un error en el programa que pot provocar problemes
