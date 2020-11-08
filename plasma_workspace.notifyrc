@@ -254,7 +254,7 @@ Sound=Oxygen-Sys-List-End.ogg
 [Event/Textcompletion: no match]
 Name=Textcompletion: No Match
 Name[ar]=إكمال النص: لا تطابق
-Name[ast]=Completáu de testu: Nun hai coincidencies
+Name[ast]=Completáu de testu: Ensin coincidencies
 Name[az]=Mətn doldurma: Uyğun gələn yoxdur
 Name[bs]=Dopuna teksta: nema poklapanja
 Name[ca]=Compleció del text: sense coincidència
