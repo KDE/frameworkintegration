@@ -857,7 +857,7 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 [Event/applicationcrash]
 Name=Application Crash
 Name[ar]=انهار تطبيق
-Name[ast]=Casque d'aplicación
+Name[ast]=Casque d'una aplicación
 Name[az]=Tətbiq Qəzası
 Name[ca]=Fallada d'aplicació
 Name[ca@valencia]=Fallada d'aplicació
