@@ -22,7 +22,7 @@ include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
-set(REQUIRED_QT_VERSION 5.12.0)
+set(REQUIRED_QT_VERSION 5.13.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Gui Widgets)
 
 
