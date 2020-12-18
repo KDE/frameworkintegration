@@ -345,7 +345,6 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
 
         return QIcon::fromTheme(directionalThemeName, QIcon::fromTheme(QStringLiteral("edit-clear")));
     }
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     case QStyle::SP_DialogYesToAllButton:
         return QIcon::fromTheme(QStringLiteral("dialog-ok"));
     case QStyle::SP_DialogNoToAllButton:
@@ -360,7 +359,6 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
         return QIcon::fromTheme(QStringLiteral("dialog-cancel"));
     case QStyle::SP_RestoreDefaultsButton:
         return QIcon::fromTheme(QStringLiteral("document-revert"));
-#endif
 
     default:
         break;
