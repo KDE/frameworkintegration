@@ -139,28 +139,30 @@ int main(int argc, char** argv)
         qWarning() << "kns error:" << errorCode << message << metadata;
         QCoreApplication::exit(1);
     });
-    QObject::connect(&engine, &KNSCore::Engine::signalEntryDetailsLoaded, &engine, [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry) {
-//         qDebug() << "checking..." << entry.status() << entry.providerId();
-        if (providerid != QUrl(entry.providerId()).host()) {
-            qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
-            QCoreApplication::exit(1);
-        } else if (entry.status() == KNS3::Entry::Downloadable) {
-            qDebug() << "installing...";
-            installedCount++;
-            engine.install(entry, linkid);
-        } else if (installedCount == 0) {
-            qDebug() << "already installed.";
-            QCoreApplication::exit(0);
+    QObject::connect(&engine, &KNSCore::Engine::signalEntryEvent, &engine,
+     [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+        if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
+            // qDebug() << "checking..." << entry.status() << entry.providerId();
+            if (providerid != QUrl(entry.providerId()).host()) {
+                qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
+                QCoreApplication::exit(1);
+            } else if (entry.status() == KNS3::Entry::Downloadable) {
+                qDebug() << "installing...";
+                installedCount++;
+                engine.install(entry, linkid);
+            } else if (installedCount == 0) {
+                qDebug() << "already installed.";
+                QCoreApplication::exit(0);
+            }
+        } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
+            if (entry.status() == KNS3::Entry::Installed) {
+               installedCount--;
+            }
+            if (installedCount == 0) {
+                QCoreApplication::exit(0);
+            }
         }
     });
-    QObject::connect(&engine, &KNSCore::Engine::signalEntryChanged, &engine, [&engine, &installedCount](const KNSCore::EntryInternal &entry) {
-        if (entry.status() == KNS3::Entry::Installed) {
-            installedCount--;
-        }
-        if (installedCount == 0)
-            QCoreApplication::exit(0);
-    });
-
     if (!engine.init(knsname)) {
         qWarning() << "couldn't initialize" << knsname;
         return 1;
