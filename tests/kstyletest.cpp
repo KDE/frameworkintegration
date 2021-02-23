@@ -5,15 +5,16 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "kstyle.h"
+
 #include <QApplication>
-#include <QWidget>
-#include <QVBoxLayout>
-#include <QPushButton>
 #include <QDialog>
-#include <QTextEdit>
 #include <QDialogButtonBox>
 #include <QLayout>
-#include "kstyle.h"
+#include <QPushButton>
+#include <QTextEdit>
+#include <QVBoxLayout>
+#include <QWidget>
 
 void showDialog()
 {
@@ -23,7 +24,7 @@ void showDialog()
 
     QDialogButtonBox *box = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, dialog.data());
 
-    //Useful to change the text because setting the text triggers setShortcut
+    // Useful to change the text because setting the text triggers setShortcut
     box->button(QDialogButtonBox::Ok)->setText(QLatin1String("Send"));
     QObject::connect(box, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     QObject::connect(box, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
@@ -32,7 +33,7 @@ void showDialog()
     layout->addWidget(usefulWidget);
     layout->addWidget(box);
 
-    //Make sure we test ctrl+return acceptance with the focus on the button
+    // Make sure we test ctrl+return acceptance with the focus on the button
     usefulWidget->setFocus();
 
     dialog->resize(200, 200);

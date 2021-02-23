@@ -31,6 +31,7 @@
 #define KDE_KSTYLE_H
 
 #include <kstyle_export.h>
+
 #include <QCommonStyle>
 #include <QPalette>
 
@@ -49,7 +50,7 @@ class KStylePrivate;
  * @author Àlex Fiestas (afiestas\@kde.org)
  */
 
-class KSTYLE_EXPORT KStyle: public QCommonStyle
+class KSTYLE_EXPORT KStyle : public QCommonStyle
 {
     Q_OBJECT
 
@@ -88,55 +89,52 @@ public:
     static SubElement customSubElement(const QString &element, const QWidget *widget);
 
 protected:
-
     /**
-    * Runtime element extension, allows inheriting styles to add support custom elements
-    * merges supporting inherit chains
-    * Supposed to be called e.g. in your constructor.
-    *
-    * NOTICE: in order to have this work, your style must provide
-    * an "X-KDE-CustomElements" classinfo, i.e.
-    * class MyStyle : public KStyle
-    * {
-    *       Q_OBJECT
-    *       Q_CLASSINFO ("X-KDE-CustomElements", "true")
-    *
-    *   public:
-    *       .....
-    * }
-    *
-    * @param element The style element, represented as string.
-    * Suggested naming convention: appname.(2-char-element-type)_element
-    * where the 2-char-element-type is of {SH, CE, SE}
-    * widgets in kdelibs don't have to pass the appname
-    * examples: "CE_CapacityBar", "amarok.CE_Analyzer"
-    *
-    * Important notes:
-    * 1) If your string lacks the matching "SH_", "CE_" or "SE_" token the element
-    * request will be ignored (return is 0)
-    * 2) To keep UI coherency, don't support any nonsense in your style, but convince app developers
-    * to use standard elements - if available
-    */
+     * Runtime element extension, allows inheriting styles to add support custom elements
+     * merges supporting inherit chains
+     * Supposed to be called e.g. in your constructor.
+     *
+     * NOTICE: in order to have this work, your style must provide
+     * an "X-KDE-CustomElements" classinfo, i.e.
+     * class MyStyle : public KStyle
+     * {
+     *       Q_OBJECT
+     *       Q_CLASSINFO ("X-KDE-CustomElements", "true")
+     *
+     *   public:
+     *       .....
+     * }
+     *
+     * @param element The style element, represented as string.
+     * Suggested naming convention: appname.(2-char-element-type)_element
+     * where the 2-char-element-type is of {SH, CE, SE}
+     * widgets in kdelibs don't have to pass the appname
+     * examples: "CE_CapacityBar", "amarok.CE_Analyzer"
+     *
+     * Important notes:
+     * 1) If your string lacks the matching "SH_", "CE_" or "SE_" token the element
+     * request will be ignored (return is 0)
+     * 2) To keep UI coherency, don't support any nonsense in your style, but convince app developers
+     * to use standard elements - if available
+     */
     StyleHint newStyleHint(const QString &element);
     ControlElement newControlElement(const QString &element);
     SubElement newSubElement(const QString &element);
 
 public:
-//@{
+    //@{
     int pixelMetric(PixelMetric m, const QStyleOption *opt = nullptr, const QWidget *widget = nullptr) const override;
-    virtual int styleHint(StyleHint hint, const QStyleOption *opt,
-                          const QWidget *w, QStyleHintReturn *returnData) const override;
+    virtual int styleHint(StyleHint hint, const QStyleOption *opt, const QWidget *w, QStyleHintReturn *returnData) const override;
 
     void polish(QWidget *) override;
-    using  QCommonStyle::polish; //! needed to avoid warnings at compilation time
+    using QCommonStyle::polish; //! needed to avoid warnings at compilation time
 
     QPalette standardPalette() const override;
 
-    virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr,
-                               const QWidget *widget = nullptr) const override;
-//@}
+    virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const override;
+    //@}
 private:
     KStylePrivate *const d;
 };
 
-#endif //KDE_KSTYLE_H
+#endif // KDE_KSTYLE_H

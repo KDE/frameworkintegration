@@ -8,13 +8,13 @@
 #include "kdeplatformtheme_config.h"
 #include "kstyle.h"
 
-#include <QTest>
+#include <QApplication>
 #include <QDir>
 #include <QFile>
+#include <QStandardPaths>
+#include <QTest>
 #include <QToolBar>
 #include <QToolButton>
-#include <QApplication>
-#include <QStandardPaths>
 
 #include <QDebug>
 
@@ -24,14 +24,14 @@ static void prepareEnvironment()
 
     QString configPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
 
-    if(!QDir(configPath).mkpath(QStringLiteral("."))) {
+    if (!QDir(configPath).mkpath(QStringLiteral("."))) {
         qFatal("Failed to create test configuration directory.");
     }
 
     configPath.append("/kdeglobals");
 
     QFile::remove(configPath);
-    if(!QFile::copy(CONFIGFILE, configPath)) {
+    if (!QFile::copy(CONFIGFILE, configPath)) {
         qFatal("Failed to copy kdeglobals required for tests.");
     }
 }
@@ -58,14 +58,13 @@ private Q_SLOTS:
         QToolBar *toolbar = new QToolBar();
         QToolButton *btn = new QToolButton(toolbar);
 
-        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int)  Qt::ToolButtonTextOnly);
+        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int)Qt::ToolButtonTextOnly);
 
         toolbar->setProperty("otherToolbar", true);
-        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int) Qt::ToolButtonTextUnderIcon);
+        QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int)Qt::ToolButtonTextUnderIcon);
     }
 };
 
 QTEST_MAIN(KStyle_UnitTest)
 
 #include "kstyle_unittest.moc"
-

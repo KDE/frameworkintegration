@@ -7,14 +7,13 @@
 
 #include "frameworkintegrationplugin.h"
 #include <KConfigGroup>
-#include <KSharedConfig>
 #include <KNotification>
+#include <KSharedConfig>
 
-#include <qplugin.h>
 #include <QDebug>
+#include <qplugin.h>
 
-bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownYesNo(const QString &dontShowAgainName,
-        KMessageBox::ButtonCode &result)
+bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result)
 {
     KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
     const QString dontAsk = cg.readEntry(dontShowAgainName, QString()).toLower();
@@ -35,8 +34,7 @@ bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownContinue(const QString &
     return cg.readEntry(dontShowAgainName, true);
 }
 
-void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainYesNo(const QString &dontShowAgainName,
-        KMessageBox::ButtonCode result)
+void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result)
 {
     KConfigGroup::WriteConfigFlags flags = KConfig::Persistent;
     if (dontShowAgainName[0] == QLatin1Char(':')) {
@@ -108,8 +106,7 @@ void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, con
         break;
     }
 
-    KNotification::event(messageType, message, QPixmap(), parent,
-                         KNotification::DefaultEvent | KNotification::CloseOnTimeout);
+    KNotification::event(messageType, message, QPixmap(), parent, KNotification::DefaultEvent | KNotification::CloseOnTimeout);
 }
 
 KFrameworkIntegrationPlugin::KFrameworkIntegrationPlugin()

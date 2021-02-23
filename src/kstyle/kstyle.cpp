@@ -33,15 +33,15 @@
 #include <QDialogButtonBox>
 #include <QEvent>
 #include <QIcon>
-#include <QStyleOption>
 #include <QPushButton>
-#include <QToolBar>
 #include <QShortcut>
+#include <QStyleOption>
+#include <QToolBar>
 
+#include <KColorScheme>
 #include <KConfigGroup>
 #include <KIconLoader>
 #include <KMessageWidget>
-#include <KColorScheme>
 
 // ----------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ public:
 KStylePrivate::KStylePrivate()
 {
     controlCounter = subElementCounter = X_KdeBase;
-    hintCounter = X_KdeBase + 1; //sic! X_KdeBase is covered by SH_KCustomStyleElement
+    hintCounter = X_KdeBase + 1; // sic! X_KdeBase is covered by SH_KCustomStyleElement
 }
 
 /*
@@ -83,20 +83,21 @@ static inline int customStyleElement(QStyle::StyleHint type, const QString &elem
 
 QStyle::StyleHint KStyle::customStyleHint(const QString &element, const QWidget *widget)
 {
-    return (StyleHint) customStyleElement(SH_KCustomStyleElement, element, const_cast<QWidget *>(widget));
+    return (StyleHint)customStyleElement(SH_KCustomStyleElement, element, const_cast<QWidget *>(widget));
 }
 
 QStyle::ControlElement KStyle::customControlElement(const QString &element, const QWidget *widget)
 {
-    return (ControlElement) customStyleElement(SH_KCustomStyleElement, element, const_cast<QWidget *>(widget));
+    return (ControlElement)customStyleElement(SH_KCustomStyleElement, element, const_cast<QWidget *>(widget));
 }
 
 QStyle::SubElement KStyle::customSubElement(const QString &element, const QWidget *widget)
 {
-    return (SubElement) customStyleElement(SH_KCustomStyleElement, element, const_cast<QWidget *>(widget));
+    return (SubElement)customStyleElement(SH_KCustomStyleElement, element, const_cast<QWidget *>(widget));
 }
 
-KStyle::KStyle() : d(new KStylePrivate)
+KStyle::KStyle()
+    : d(new KStylePrivate)
 {
 }
 
@@ -192,7 +193,7 @@ void KStyle::polish(QWidget *w)
             QObject::connect(shortcut, &QShortcut::activated, button, &QPushButton::click);
         }
     }
-    if (auto messageWidget = qobject_cast<KMessageWidget*>(w)) {
+    if (auto messageWidget = qobject_cast<KMessageWidget *>(w)) {
         KColorScheme scheme;
         QColor color;
         QPalette palette = messageWidget->palette();
@@ -221,8 +222,7 @@ QPalette KStyle::standardPalette() const
     return KColorScheme::createApplicationPalette(KSharedConfig::openConfig());
 }
 
-QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *option,
-                           const QWidget *widget) const
+QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *option, const QWidget *widget) const
 {
     switch (standardIcon) {
     case QStyle::SP_DesktopIcon:
@@ -249,15 +249,15 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
     case QStyle::SP_DirIcon:
         return QIcon::fromTheme(QStringLiteral("folder"));
     case QStyle::SP_DirLinkIcon:
-        return QIcon::fromTheme(QStringLiteral("folder")); //TODO: generate (!?) folder with link emblem
+        return QIcon::fromTheme(QStringLiteral("folder")); // TODO: generate (!?) folder with link emblem
     case QStyle::SP_FileIcon:
-        return QIcon::fromTheme(QStringLiteral("text-plain")); //TODO: look for a better icon
+        return QIcon::fromTheme(QStringLiteral("text-plain")); // TODO: look for a better icon
     case QStyle::SP_FileLinkIcon:
-        return QIcon::fromTheme(QStringLiteral("text-plain")); //TODO: generate (!?) file with link emblem
+        return QIcon::fromTheme(QStringLiteral("text-plain")); // TODO: generate (!?) file with link emblem
     case QStyle::SP_FileDialogStart:
-        return QIcon::fromTheme(QStringLiteral("media-playback-start")); //TODO: find correct icon
+        return QIcon::fromTheme(QStringLiteral("media-playback-start")); // TODO: find correct icon
     case QStyle::SP_FileDialogEnd:
-        return QIcon::fromTheme(QStringLiteral("media-playback-stop")); //TODO: find correct icon
+        return QIcon::fromTheme(QStringLiteral("media-playback-stop")); // TODO: find correct icon
     case QStyle::SP_FileDialogToParent:
         return QIcon::fromTheme(QStringLiteral("go-up"));
     case QStyle::SP_FileDialogNewFolder:
@@ -340,8 +340,7 @@ QIcon KStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *opti
     case SP_LineEditClearButton: {
         const bool rtl = (option && option->direction == Qt::RightToLeft) || (!option && QApplication::isRightToLeft());
 
-        const QString directionalThemeName = rtl
-            ? QStringLiteral("edit-clear-locationbar-ltr") : QStringLiteral("edit-clear-locationbar-rtl");
+        const QString directionalThemeName = rtl ? QStringLiteral("edit-clear-locationbar-ltr") : QStringLiteral("edit-clear-locationbar-rtl");
 
         return QIcon::fromTheme(directionalThemeName, QIcon::fromTheme(QStringLiteral("edit-clear")));
     }
@@ -393,8 +392,8 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         bool useOthertoolbars = false;
         const QWidget *parent = widget ? widget->parentWidget() : nullptr;
 
-        //If the widget parent is a QToolBar and the magic property is set
-        if (parent && qobject_cast< const QToolBar * >(parent)) {
+        // If the widget parent is a QToolBar and the magic property is set
+        if (parent && qobject_cast<const QToolBar *>(parent)) {
             if (parent->property("otherToolbar").isValid()) {
                 useOthertoolbars = true;
             }
@@ -408,11 +407,11 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         }
 
         return buttonStyle == QLatin1String("textbesideicon") ? Qt::ToolButtonTextBesideIcon
-               : buttonStyle == QLatin1String("icontextright") ? Qt::ToolButtonTextBesideIcon
-               : buttonStyle == QLatin1String("textundericon") ? Qt::ToolButtonTextUnderIcon
-               : buttonStyle == QLatin1String("icontextbottom") ? Qt::ToolButtonTextUnderIcon
-               : buttonStyle == QLatin1String("textonly") ? Qt::ToolButtonTextOnly
-               : Qt::ToolButtonIconOnly;
+            : buttonStyle == QLatin1String("icontextright")   ? Qt::ToolButtonTextBesideIcon
+            : buttonStyle == QLatin1String("textundericon")   ? Qt::ToolButtonTextUnderIcon
+            : buttonStyle == QLatin1String("icontextbottom")  ? Qt::ToolButtonTextUnderIcon
+            : buttonStyle == QLatin1String("textonly")        ? Qt::ToolButtonTextOnly
+                                                              : Qt::ToolButtonIconOnly;
     }
 
     case SH_KCustomStyleElement:
@@ -456,4 +455,3 @@ int KStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const QW
 
     return QCommonStyle::pixelMetric(metric, option, widget);
 }
-

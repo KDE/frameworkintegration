@@ -8,17 +8,22 @@
 #ifndef FRAMEWORKINTEGRATIONPLUGIN_H
 #define FRAMEWORKINTEGRATIONPLUGIN_H
 
-#include <QObject>
 #include <KMessageBoxDontAskAgainInterface>
 #include <KMessageBoxNotifyInterface>
+#include <QObject>
 
 class KConfig;
 
 class KMessageBoxDontAskAgainConfigStorage : public KMessageBoxDontAskAgainInterface
 {
 public:
-    KMessageBoxDontAskAgainConfigStorage() : KMessageBox_againConfig(nullptr) {}
-    ~KMessageBoxDontAskAgainConfigStorage() override {}
+    KMessageBoxDontAskAgainConfigStorage()
+        : KMessageBox_againConfig(nullptr)
+    {
+    }
+    ~KMessageBoxDontAskAgainConfigStorage() override
+    {
+    }
 
     bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) override;
     bool shouldBeShownContinue(const QString &dontShowAgainName) override;
@@ -46,7 +51,6 @@ class KFrameworkIntegrationPlugin : public QObject
     Q_PLUGIN_METADATA(IID "org.kde.FrameworkIntegrationPlugin")
     Q_OBJECT
 public:
-
     KFrameworkIntegrationPlugin();
 
 public Q_SLOTS:

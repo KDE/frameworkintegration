@@ -5,14 +5,14 @@
     SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#include <QCoreApplication>
-#include <QDebug>
 #include <AppStreamQt/pool.h>
 #include <PackageKit/Daemon>
+#include <QCoreApplication>
+#include <QDebug>
 
 using namespace AppStream;
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
     Q_ASSERT(app.arguments().count() == 2);
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     }
 
     QStringList packages;
-    for(const auto &component : components) {
+    for (const auto &component : components) {
         packages += component.packageNames();
     }
     packages.removeDuplicates();
@@ -52,11 +52,14 @@ int main(int argc, char** argv)
 
     QHash<QString, QString> pkgs;
 
-    QObject::connect(resolveTransaction, &PackageKit::Transaction::package, resolveTransaction, [&pkgs](PackageKit::Transaction::Info info, const QString &packageID, const QString &/*summary*/) {
-        if (info == PackageKit::Transaction::InfoAvailable)
-            pkgs[PackageKit::Daemon::packageName(packageID)] = packageID;
-        qDebug() << "resolved package"  << info << packageID;
-    });
+    QObject::connect(resolveTransaction,
+                     &PackageKit::Transaction::package,
+                     resolveTransaction,
+                     [&pkgs](PackageKit::Transaction::Info info, const QString &packageID, const QString & /*summary*/) {
+                         if (info == PackageKit::Transaction::InfoAvailable)
+                             pkgs[PackageKit::Daemon::packageName(packageID)] = packageID;
+                         qDebug() << "resolved package" << info << packageID;
+                     });
     QObject::connect(resolveTransaction, &PackageKit::Transaction::finished, resolveTransaction, [&app, &pkgs](PackageKit::Transaction::Exit status) {
         if (status != PackageKit::Transaction::ExitSuccess) {
             qWarning() << "resolve failed" << status;

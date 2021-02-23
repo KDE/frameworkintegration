@@ -7,13 +7,13 @@
 */
 
 #include <QCoreApplication>
-#include <QUrl>
-#include <QUrlQuery>
-#include <QTimer>
 #include <QDebug>
-#include <QStandardPaths>
 #include <QFile>
 #include <QFileInfo>
+#include <QStandardPaths>
+#include <QTimer>
+#include <QUrl>
+#include <QUrlQuery>
 
 #include <KLocalizedString>
 
@@ -52,7 +52,7 @@ void createSymlinkForWindowDecorations()
     file.link(info.absoluteFilePath());
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     createSymlinkForWindowDecorations();
     QCoreApplication app(argc, argv);
@@ -103,66 +103,80 @@ int main(int argc, char** argv)
         }
     }
 
-
     KNSCore::Engine engine;
     int installedCount = 0;
-    QObject::connect(KNSCore::QuestionManager::instance(), &KNSCore::QuestionManager::askQuestion, &engine, [](KNSCore::Question* question){
-        auto discardQuestion = [question]() { question->setResponse(KNSCore::Question::InvalidResponse); };
-        switch(question->questionType()) {
-            case KNSCore::Question::YesNoQuestion: {
-                auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
-                f->setActions({i18n("Yes"), i18n("No")});
-                QObject::connect(f, &KNotification::action1Activated, question, [question](){ question->setResponse(KNSCore::Question::YesResponse); });
-                QObject::connect(f, &KNotification::action2Activated, question, [question](){ question->setResponse(KNSCore::Question::NoResponse); });
-                QObject::connect(f, &KNotification::closed, question, discardQuestion);
-            }   break;
-            case KNSCore::Question::ContinueCancelQuestion: {
-                auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
-                f->setActions({i18n("Continue"), i18n("Cancel")});
-                QObject::connect(f, &KNotification::action1Activated, question, [question](){ question->setResponse(KNSCore::Question::ContinueResponse); });
-                QObject::connect(f, &KNotification::action2Activated, question, [question](){ question->setResponse(KNSCore::Question::CancelResponse); });
-                QObject::connect(f, &KNotification::closed, question, discardQuestion);
-            }   break;
-            case KNSCore::Question::InputTextQuestion:
-            case KNSCore::Question::SelectFromListQuestion:
-            case KNSCore::Question::PasswordQuestion:
-                discardQuestion();
-                break;
+    QObject::connect(KNSCore::QuestionManager::instance(), &KNSCore::QuestionManager::askQuestion, &engine, [](KNSCore::Question *question) {
+        auto discardQuestion = [question]() {
+            question->setResponse(KNSCore::Question::InvalidResponse);
+        };
+        switch (question->questionType()) {
+        case KNSCore::Question::YesNoQuestion: {
+            auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
+            f->setActions({i18n("Yes"), i18n("No")});
+            QObject::connect(f, &KNotification::action1Activated, question, [question]() {
+                question->setResponse(KNSCore::Question::YesResponse);
+            });
+            QObject::connect(f, &KNotification::action2Activated, question, [question]() {
+                question->setResponse(KNSCore::Question::NoResponse);
+            });
+            QObject::connect(f, &KNotification::closed, question, discardQuestion);
+        } break;
+        case KNSCore::Question::ContinueCancelQuestion: {
+            auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
+            f->setActions({i18n("Continue"), i18n("Cancel")});
+            QObject::connect(f, &KNotification::action1Activated, question, [question]() {
+                question->setResponse(KNSCore::Question::ContinueResponse);
+            });
+            QObject::connect(f, &KNotification::action2Activated, question, [question]() {
+                question->setResponse(KNSCore::Question::CancelResponse);
+            });
+            QObject::connect(f, &KNotification::closed, question, discardQuestion);
+        } break;
+        case KNSCore::Question::InputTextQuestion:
+        case KNSCore::Question::SelectFromListQuestion:
+        case KNSCore::Question::PasswordQuestion:
+            discardQuestion();
+            break;
         }
     });
 
-    QObject::connect(&engine, &KNSCore::Engine::signalProvidersLoaded, &engine, [&engine, entryid](){
+    QObject::connect(&engine, &KNSCore::Engine::signalProvidersLoaded, &engine, [&engine, entryid]() {
         engine.fetchEntryById(entryid);
     });
 
-    QObject::connect(&engine, &KNSCore::Engine::signalErrorCode, &engine, [](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata) {
-        qWarning() << "kns error:" << errorCode << message << metadata;
-        QCoreApplication::exit(1);
-    });
-    QObject::connect(&engine, &KNSCore::Engine::signalEntryEvent, &engine,
-     [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
-        if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
-            // qDebug() << "checking..." << entry.status() << entry.providerId();
-            if (providerid != QUrl(entry.providerId()).host()) {
-                qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
-                QCoreApplication::exit(1);
-            } else if (entry.status() == KNS3::Entry::Downloadable) {
-                qDebug() << "installing...";
-                installedCount++;
-                engine.install(entry, linkid);
-            } else if (installedCount == 0) {
-                qDebug() << "already installed.";
-                QCoreApplication::exit(0);
-            }
-        } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
-            if (entry.status() == KNS3::Entry::Installed) {
-               installedCount--;
-            }
-            if (installedCount == 0) {
-                QCoreApplication::exit(0);
-            }
-        }
-    });
+    QObject::connect(&engine,
+                     &KNSCore::Engine::signalErrorCode,
+                     &engine,
+                     [](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata) {
+                         qWarning() << "kns error:" << errorCode << message << metadata;
+                         QCoreApplication::exit(1);
+                     });
+    QObject::connect(&engine,
+                     &KNSCore::Engine::signalEntryEvent,
+                     &engine,
+                     [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+                         if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
+                             // qDebug() << "checking..." << entry.status() << entry.providerId();
+                             if (providerid != QUrl(entry.providerId()).host()) {
+                                 qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
+                                 QCoreApplication::exit(1);
+                             } else if (entry.status() == KNS3::Entry::Downloadable) {
+                                 qDebug() << "installing...";
+                                 installedCount++;
+                                 engine.install(entry, linkid);
+                             } else if (installedCount == 0) {
+                                 qDebug() << "already installed.";
+                                 QCoreApplication::exit(0);
+                             }
+                         } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
+                             if (entry.status() == KNS3::Entry::Installed) {
+                                 installedCount--;
+                             }
+                             if (installedCount == 0) {
+                                 QCoreApplication::exit(0);
+                             }
+                         }
+                     });
     if (!engine.init(knsname)) {
         qWarning() << "couldn't initialize" << knsname;
         return 1;
