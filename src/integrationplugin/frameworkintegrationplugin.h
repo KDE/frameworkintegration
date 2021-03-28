@@ -13,6 +13,7 @@
 #include <QObject>
 
 class KConfig;
+struct ca_context;
 
 class KMessageBoxDontAskAgainConfigStorage : public KMessageBoxDontAskAgainInterface
 {
@@ -43,7 +44,12 @@ private:
 class KMessageBoxNotify : public KMessageBoxNotifyInterface
 {
 public:
+    explicit KMessageBoxNotify();
+    virtual ~KMessageBoxNotify();
     void sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget *parent) override;
+
+private:
+    ca_context *m_context = nullptr;
 };
 
 class KFrameworkIntegrationPlugin : public QObject

@@ -37,6 +37,7 @@ find_package(KF5ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5IconThemes ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5Notifications ${KF_DEP_VERSION} REQUIRED)
 
+find_package(Canberra REQUIRED)
 
 option(BUILD_KPACKAGE_INSTALL_HANDLERS "Build the KPackage install handler binaries (recommended)" ON)
 if (BUILD_KPACKAGE_INSTALL_HANDLERS)

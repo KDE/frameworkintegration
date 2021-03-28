@@ -6,7 +6,7 @@ target_link_libraries(FrameworkIntegrationPlugin
     PRIVATE
         KF5::WidgetsAddons
         KF5::ConfigCore
-        KF5::Notifications
+        Canberra::Canberra
 )
 
 install(TARGETS FrameworkIntegrationPlugin

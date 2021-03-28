@@ -7,11 +7,14 @@
 
 #include "frameworkintegrationplugin.h"
 #include <KConfigGroup>
-#include <KNotification>
 #include <KSharedConfig>
 
 #include <QDebug>
+#include <QFileInfo>
+#include <QGuiApplication>
 #include <qplugin.h>
+
+#include <canberra.h>
 
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result)
 {
@@ -88,25 +91,85 @@ void KMessageBoxDontAskAgainConfigStorage::enableMessage(const QString &dontShow
     config->sync();
 }
 
+KMessageBoxNotify::KMessageBoxNotify()
+{
+    int ret = ca_context_create(&m_context);
+    if (ret != CA_SUCCESS) {
+        qWarning() << "Failed to initialize canberra context for audio:" << ca_strerror(ret);
+        m_context = nullptr;
+        return;
+    }
+
+    QString desktopFileName = QGuiApplication::desktopFileName();
+    // handle apps which set the desktopFileName property with filename suffix,
+    // due to unclear API dox (https://bugreports.qt.io/browse/QTBUG-75521)
+    if (desktopFileName.endsWith(QLatin1String(".desktop"))) {
+        desktopFileName.chop(8);
+    }
+    ret = ca_context_change_props(m_context,
+                                  CA_PROP_APPLICATION_NAME,
+                                  qUtf8Printable(qApp->applicationDisplayName()),
+                                  CA_PROP_APPLICATION_ID,
+                                  qUtf8Printable(desktopFileName),
+                                  CA_PROP_APPLICATION_ICON_NAME,
+                                  qUtf8Printable(qApp->windowIcon().name()),
+                                  nullptr);
+    if (ret != CA_SUCCESS) {
+        qWarning() << "Failed to set application properties on canberra context for audio notification:" << ca_strerror(ret);
+    }
+}
+
+KMessageBoxNotify::~KMessageBoxNotify()
+{
+    if (m_context) {
+        ca_context_destroy(m_context);
+    }
+    m_context = nullptr;
+}
+
 void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget *parent)
 {
-    QString messageType;
+    Q_UNUSED(message);
+    Q_UNUSED(parent);
+
+    QString soundFilename;
+
     switch (notificationType) {
     case QMessageBox::Warning:
-        messageType = QStringLiteral("messageWarning");
+        soundFilename = QStringLiteral("Oxygen-Sys-Warning.ogg");
         break;
     case QMessageBox::Critical:
-        messageType = QStringLiteral("messageCritical");
+        soundFilename = QStringLiteral("Oxygen-Sys-App-Error-Critical.ogg");
         break;
     case QMessageBox::Question:
-        messageType = QStringLiteral("messageQuestion");
+        soundFilename = QStringLiteral("Oxygen-Sys-Question.ogg");
         break;
     default:
-        messageType = QStringLiteral("messageInformation");
+        soundFilename = QStringLiteral("Oxygen-Sys-App-Message.ogg");
         break;
     }
 
-    KNotification::event(messageType, message, QPixmap(), parent, KNotification::DefaultEvent | KNotification::CloseOnTimeout);
+    QUrl soundURL;
+    const auto dataLocations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    for (const QString &dataLocation : dataLocations) {
+        soundURL = QUrl::fromUserInput(soundFilename, dataLocation + QStringLiteral("/sounds"), QUrl::AssumeLocalFile);
+        if (soundURL.isLocalFile() && QFileInfo::exists(soundURL.toLocalFile())) {
+            break;
+        } else if (!soundURL.isLocalFile() && soundURL.isValid()) {
+            break;
+        }
+        soundURL.clear();
+    }
+    if (soundURL.isEmpty()) {
+        qWarning() << "Could not find audio file" << soundFilename;
+        return;
+    }
+
+    int ret = ca_context_play(m_context, 0 /*arbitrary id*/, CA_PROP_MEDIA_FILENAME, QFile::encodeName(soundURL.toLocalFile()).constData(), nullptr);
+
+    if (ret != CA_SUCCESS) {
+        qWarning() << "Failed to play sound with canberra:" << ca_strerror(ret);
+    }
 }
 
 KFrameworkIntegrationPlugin::KFrameworkIntegrationPlugin()
