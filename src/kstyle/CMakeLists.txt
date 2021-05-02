@@ -17,7 +17,7 @@ target_link_libraries(KF5Style
         KF5::IconThemes
 )
 
-set_target_properties(KF5Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION_STRING}
+set_target_properties(KF5Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION}
                                           SOVERSION ${FRAMEWORKINTEGRATION_SOVERSION}
                                           EXPORT_NAME Style
 )
