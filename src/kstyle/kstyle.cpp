@@ -151,7 +151,7 @@ KStyle::~KStyle()
 
 static inline int newStyleElement(const QString &element, const char *check, int &counter, QHash<QString, int> *elements)
 {
-    if (!element.contains(check)) {
+    if (!element.contains(QLatin1String(check))) {
         return 0;
     }
     int id = elements->value(element, 0);
