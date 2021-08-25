@@ -5,7 +5,7 @@ type: integration
 platforms:
     - name: Linux
     - name: Windows
-    - name: MacOSX
+    - name: macOS
     - name: Linux
       note: XCB is needed for KStyle
     - name: FreeBSD
