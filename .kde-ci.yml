@@ -1,0 +1,21 @@
+Dependencies:
+- 'on': ['Linux', 'Windows', 'macOS', 'Linux']
+  'require':
+    'frameworks/extra-cmake-modules': '@same'
+    'frameworks/ki18n' : '@same'
+    'frameworks/kguiaddons' : '@same'
+    'frameworks/kwidgetsaddons' : '@same'
+    'frameworks/kconfigwidgets' : '@same'
+    'frameworks/kitemviews' : '@same'
+    'frameworks/kconfig' : '@same'
+    'frameworks/kiconthemes' : '@same'
+    'frameworks/knotifications' : '@same'
+    'frameworks/ki18n' : '@same'
+    'frameworks/kio' : '@same'
+    'frameworks/kinit' : '@same'
+    'frameworks/oxygen-icons5' : '@same'
+    'frameworks/kpackage' : '@same'
+    'frameworks/knewstuff' : '@same'
+
+Options:
+  test-before-installing: True
