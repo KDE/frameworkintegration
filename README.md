@@ -34,8 +34,3 @@ Frameworks to integrate with KDE Plasma.
 It currently provides an addon to KMessageBox which stores settings
 for asking users the same question again.
 
-### KDEPlatformTheme
-
-The plugin KDEPlatformTheme provides KDE integration for
-QPlatformThemePlugin.
-
