@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     Q_ASSERT(url.scheme() == QLatin1String("kns"));
 
     QString knsname;
-    for (const auto &location : KNSCore::Engine::configSearchLocations(true)) {
+    for (const auto &location : KNSCore::Engine::availableConfigFiles()) {
         QString candidate = location + QLatin1Char('/') + url.host();
         if (QFile::exists(candidate)) {
             knsname = candidate;
