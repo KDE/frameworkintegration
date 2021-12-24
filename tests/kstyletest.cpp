@@ -25,7 +25,7 @@ void showDialog()
     QDialogButtonBox *box = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, dialog.data());
 
     // Useful to change the text because setting the text triggers setShortcut
-    box->button(QDialogButtonBox::Ok)->setText(QLatin1String("Send"));
+    box->button(QDialogButtonBox::Ok)->setText(QStringLiteral("Send"));
     QObject::connect(box, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     QObject::connect(box, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
 

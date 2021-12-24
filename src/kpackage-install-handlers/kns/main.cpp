@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 {
     createSymlinkForWindowDecorations();
     QCoreApplication app(argc, argv);
-    app.setApplicationName(QLatin1String("kpackage-knshandler"));
+    app.setApplicationName(QStringLiteral("kpackage-knshandler"));
     app.setApplicationVersion(knshandlerversion);
     app.setQuitLockEnabled(false);
     Q_ASSERT(app.arguments().count() == 2);
@@ -93,9 +93,9 @@ int main(int argc, char **argv)
     int linkid = 1;
     if (url.hasQuery()) {
         QUrlQuery query(url);
-        if (query.hasQueryItem(QLatin1String("linkid"))) {
+        if (query.hasQueryItem(QStringLiteral("linkid"))) {
             bool ok;
-            linkid = query.queryItemValue(QLatin1String("linkid")).toInt(&ok);
+            linkid = query.queryItemValue(QStringLiteral("linkid")).toInt(&ok);
             if (!ok) {
                 qWarning() << "linkid is not an integer" << url << pathParts;
                 return 1;
@@ -144,13 +144,10 @@ int main(int argc, char **argv)
         engine.fetchEntryById(entryid);
     });
 
-    QObject::connect(&engine,
-                     &KNSCore::Engine::signalErrorCode,
-                     &engine,
-                     [](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata) {
-                         qWarning() << "kns error:" << errorCode << message << metadata;
-                         QCoreApplication::exit(1);
-                     });
+    QObject::connect(&engine, &KNSCore::Engine::signalErrorCode, &engine, [](KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata) {
+        qWarning() << "kns error:" << errorCode << message << metadata;
+        QCoreApplication::exit(1);
+    });
     QObject::connect(&engine,
                      &KNSCore::Engine::signalEntryEvent,
                      &engine,
