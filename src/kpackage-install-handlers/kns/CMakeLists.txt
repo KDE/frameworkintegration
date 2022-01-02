@@ -1,11 +1,11 @@
 configure_file(knshandlerversion.h.in knshandlerversion.h)
 add_executable(knshandler main.cpp)
-target_link_libraries(knshandler KF5::NewStuffCore KF5::I18n KF5::Notifications Qt5::Xml)
+target_link_libraries(knshandler KF5::NewStuffCore KF5::I18n KF5::Notifications Qt${QT_MAJOR_VERSION}::Xml)
 
-install(TARGETS knshandler DESTINATION ${KDE_INSTALL_LIBEXECDIR_KF5}/kpackagehandlers)
+install(TARGETS knshandler DESTINATION ${KDE_INSTALL_LIBEXECDIR_KF}/kpackagehandlers)
 
 add_executable(knshandlertest main.cpp)
-target_link_libraries(knshandlertest KF5::NewStuffCore KF5::I18n KF5::Notifications Qt5::Xml)
+target_link_libraries(knshandlertest KF5::NewStuffCore KF5::I18n KF5::Notifications Qt${QT_MAJOR_VERSION}::Xml)
 target_compile_definitions(knshandlertest PRIVATE -DTEST)
 
 if(EXISTS "${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_CONFDIR}/colorschemes.knsrc")

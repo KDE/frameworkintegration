@@ -17,7 +17,7 @@
 
 #include <KLocalizedString>
 
-#include <KNotifications/KNotification>
+#include <KNotification>
 
 #include <KNSCore/Engine>
 #include <KNSCore/QuestionManager>
