@@ -70,17 +70,16 @@ int main(int argc, char **argv)
     Q_ASSERT(url.scheme() == QLatin1String("kns"));
 
     QString knsname;
-    for (const auto &location : KNSCore::Engine::availableConfigFiles()) {
-        QString candidate = location + QLatin1Char('/') + url.host();
-        if (QFile::exists(candidate)) {
-            knsname = candidate;
-            break;
-        }
-    }
+    const QStringList availableConfigFiles = KNSCore::Engine::availableConfigFiles();
+    auto knsNameIt = std::find_if(availableConfigFiles.begin(), availableConfigFiles.end(), [&url](const QString &availableFile) {
+        return availableFile.endsWith(QLatin1String("/") + url.host());
+    });
 
-    if (knsname.isEmpty()) {
+    if (knsNameIt == availableConfigFiles.end()) {
         qWarning() << "couldn't find knsrc file for" << url.host();
         return 1;
+    } else {
+        knsname = *knsNameIt;
     }
 
     const auto pathParts = url.path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
