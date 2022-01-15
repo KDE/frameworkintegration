@@ -5,7 +5,8 @@ add_library(KF5Style kstyle.cpp)
 generate_export_header(KF5Style BASE_NAME KStyle)
 add_library(KF5::Style ALIAS KF5Style)
 
-target_include_directories(KF5Style INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KStyle>")
+target_include_directories(KF5Style
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/FrameworkIntegration>;$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KStyle>")
 
 target_link_libraries(KF5Style
     PUBLIC
