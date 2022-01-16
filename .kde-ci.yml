@@ -12,7 +12,6 @@ Dependencies:
     'frameworks/knotifications' : '@same'
     'frameworks/ki18n' : '@same'
     'frameworks/kio' : '@same'
-    'frameworks/kinit' : '@same'
     'frameworks/oxygen-icons5' : '@same'
     'frameworks/kpackage' : '@same'
     'frameworks/knewstuff' : '@same'
