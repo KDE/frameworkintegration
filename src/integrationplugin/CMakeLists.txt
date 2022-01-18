@@ -10,4 +10,4 @@ target_link_libraries(FrameworkIntegrationPlugin
 )
 
 install(TARGETS FrameworkIntegrationPlugin
-        DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5)
+        DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION})
