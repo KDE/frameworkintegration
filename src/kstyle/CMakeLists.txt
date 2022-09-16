@@ -29,7 +29,7 @@ ecm_generate_headers(KStyle_HEADERS
 
 install(TARGETS KF5Style
         EXPORT KF5FrameworkIntegrationTargets
-        ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+        ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
               ${KStyle_HEADERS}
