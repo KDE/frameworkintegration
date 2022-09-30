@@ -25,9 +25,17 @@ public:
     {
     }
 
+#if KWIDGETSADDONS_BUILD_DEPRECATED_SINCE(5, 100)
     bool shouldBeShownYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) override;
+#else
+    bool shouldBeShownTwoActions(const QString &dontShowAgainName, KMessageBox::ButtonCode &result) override;
+#endif
     bool shouldBeShownContinue(const QString &dontShowAgainName) override;
+#if KWIDGETSADDONS_BUILD_DEPRECATED_SINCE(5, 100)
     void saveDontShowAgainYesNo(const QString &dontShowAgainName, KMessageBox::ButtonCode result) override;
+#else
+    void saveDontShowAgainTwoActions(const QString &dontShowAgainName, KMessageBox::ButtonCode result) override;
+#endif
     void saveDontShowAgainContinue(const QString &dontShowAgainName) override;
     void enableAllMessages() override;
     void enableMessage(const QString &dontShowAgainName) override;
