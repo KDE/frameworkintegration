@@ -11,9 +11,9 @@ Applications do not need to link to this directly.
 
 ## Components
 
-### KF5Style
+### KF6Style
 
-The library KF5Style provides integration with KDE Plasma Workspace
+The library KF6Style provides integration with KDE Plasma Workspace
 settings for Qt styles.
 
 Derive your Qt style from KStyle to automatically inherit various

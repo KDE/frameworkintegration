@@ -4,9 +4,9 @@ add_library(FrameworkIntegrationPlugin
 
 target_link_libraries(FrameworkIntegrationPlugin
     PRIVATE
-        KF5::WidgetsAddons
-        KF5::ConfigCore
-        KF5::Notifications
+        KF6::WidgetsAddons
+        KF6::ConfigCore
+        KF6::Notifications
 )
 
 install(TARGETS FrameworkIntegrationPlugin

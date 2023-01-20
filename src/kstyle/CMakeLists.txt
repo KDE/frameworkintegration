@@ -1,22 +1,22 @@
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5Style")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6Style")
 
-add_library(KF5Style kstyle.cpp)
-generate_export_header(KF5Style BASE_NAME KStyle)
-add_library(KF5::Style ALIAS KF5Style)
+add_library(KF6Style kstyle.cpp)
+generate_export_header(KF6Style BASE_NAME KStyle)
+add_library(KF6::Style ALIAS KF6Style)
 
-target_include_directories(KF5Style
+target_include_directories(KF6Style
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/FrameworkIntegration>;$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KStyle>")
 
-target_link_libraries(KF5Style
+target_link_libraries(KF6Style
     PUBLIC
         Qt${QT_MAJOR_VERSION}::Widgets
     PRIVATE
-        KF5::ConfigWidgets
-        KF5::IconThemes
+        KF6::ConfigWidgets
+        KF6::IconThemes
 )
 
-set_target_properties(KF5Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION}
+set_target_properties(KF6Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION}
                                           SOVERSION ${FRAMEWORKINTEGRATION_SOVERSION}
                                           EXPORT_NAME Style
 )
@@ -27,8 +27,8 @@ ecm_generate_headers(KStyle_HEADERS
   REQUIRED_HEADERS KStyle_HEADERS
 )
 
-install(TARGETS KF5Style
-        EXPORT KF5FrameworkIntegrationTargets
+install(TARGETS KF6Style
+        EXPORT KF6FrameworkIntegrationTargets
         ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
