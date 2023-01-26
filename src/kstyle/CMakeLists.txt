@@ -10,7 +10,7 @@ target_include_directories(KF6Style
 
 target_link_libraries(KF6Style
     PUBLIC
-        Qt${QT_MAJOR_VERSION}::Widgets
+        Qt6::Widgets
     PRIVATE
         KF6::ConfigWidgets
         KF6::IconThemes

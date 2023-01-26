@@ -25,7 +25,7 @@ include(KDEGitCommitHooks)
 include(ECMDeprecationSettings)
 
 set(REQUIRED_QT_VERSION 6.4.0)
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Gui Widgets)
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Gui Widgets)
 
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX FRAMEWORKINTEGRATION
@@ -46,13 +46,13 @@ if (BUILD_KPACKAGE_INSTALL_HANDLERS)
    find_package(KF6Package ${KF_DEP_VERSION} REQUIRED)
    find_package(KF6I18n ${KF_DEP_VERSION} REQUIRED)
 
-   find_package(packagekitqt${QT_MAJOR_VERSION})
+   find_package(packagekitqt6)
    find_package(AppStreamQt 0.10.4)
 endif()
 
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
-    KF 5.95
+    QT 6.4.0
+    KF 5.102
 )
 
 add_subdirectory(src)
