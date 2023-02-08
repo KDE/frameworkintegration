@@ -20,6 +20,7 @@
 #include <KNotification>
 
 #include <KNSCore/Engine>
+#include <KNSCore/Question>
 #include <KNSCore/QuestionManager>
 
 #include "knshandlerversion.h"
@@ -150,13 +151,13 @@ int main(int argc, char **argv)
     QObject::connect(&engine,
                      &KNSCore::Engine::signalEntryEvent,
                      &engine,
-                     [providerid, linkid, &engine, &installedCount](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
-                         if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
+                     [providerid, linkid, &engine, &installedCount](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+                         if (event == KNSCore::Entry::DetailsLoadedEvent) {
                              // qDebug() << "checking..." << entry.status() << entry.providerId();
                              if (providerid != QUrl(entry.providerId()).host()) {
                                  qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
                                  QCoreApplication::exit(1);
-                             } else if (entry.status() == KNS3::Entry::Downloadable) {
+                             } else if (entry.status() == KNSCore::Entry::Downloadable) {
                                  qDebug() << "installing...";
                                  installedCount++;
                                  engine.install(entry, linkid);
@@ -164,8 +165,8 @@ int main(int argc, char **argv)
                                  qDebug() << "already installed.";
                                  QCoreApplication::exit(0);
                              }
-                         } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
-                             if (entry.status() == KNS3::Entry::Installed) {
+                         } else if (event == KNSCore::Entry::StatusChangedEvent) {
+                             if (entry.status() == KNSCore::Entry::Installed) {
                                  installedCount--;
                              }
                              if (installedCount == 0) {
