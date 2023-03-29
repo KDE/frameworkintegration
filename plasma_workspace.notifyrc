@@ -678,8 +678,7 @@ Comment[uk]=Щось особливе сталось у програмі
 Comment[x-test]=xxSomething special happened in the programxx
 Comment[zh_CN]=程序中发生的特殊事件
 Comment[zh_TW]=程式中發生了特殊事件
-Action=Sound|Popup
-Sound=Oxygen-Sys-Special.ogg
+Action=Popup
 
 [Event/warning]
 Name=Warning
