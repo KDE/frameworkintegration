@@ -10,10 +10,22 @@ set_target_properties(KF6Style PROPERTIES
     EXPORT_NAME Style
 )
 
-generate_export_header(KF6Style BASE_NAME KStyle)
+ecm_generate_export_header(KF6Style
+    BASE_NAME KStyle
+    GROUP_BASE_NAME KF
+    VERSION ${KF_VERSION}
+    USE_VERSION_HEADER
+    VERSION_BASE_NAME FrameworkIntegration
+    DEPRECATED_BASE_VERSION 0
+)
 
 target_include_directories(KF6Style
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/FrameworkIntegration>;$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KStyle>")
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/FrameworkIntegration>" # version header
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KStyle>"
+    PUBLIC
+        "$<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>" # version header
+)
 
 target_link_libraries(KF6Style
     PUBLIC

@@ -13,7 +13,7 @@ feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKA
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 
-include(GenerateExportHeader)
+include(ECMGenerateExportHeader)
 include(CMakePackageConfigHelpers)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
