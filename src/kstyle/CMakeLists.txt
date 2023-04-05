@@ -2,8 +2,15 @@
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6Style")
 
 add_library(KF6Style kstyle.cpp)
-generate_export_header(KF6Style BASE_NAME KStyle)
 add_library(KF6::Style ALIAS KF6Style)
+
+set_target_properties(KF6Style PROPERTIES
+    VERSION     ${FRAMEWORKINTEGRATION_VERSION}
+    SOVERSION   ${FRAMEWORKINTEGRATION_SOVERSION}
+    EXPORT_NAME Style
+)
+
+generate_export_header(KF6Style BASE_NAME KStyle)
 
 target_include_directories(KF6Style
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/FrameworkIntegration>;$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KStyle>")
@@ -14,11 +21,6 @@ target_link_libraries(KF6Style
     PRIVATE
         KF6::ConfigWidgets
         KF6::IconThemes
-)
-
-set_target_properties(KF6Style PROPERTIES VERSION   ${FRAMEWORKINTEGRATION_VERSION}
-                                          SOVERSION ${FRAMEWORKINTEGRATION_SOVERSION}
-                                          EXPORT_NAME Style
 )
 
 ecm_generate_headers(KStyle_HEADERS
