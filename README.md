@@ -22,10 +22,6 @@ experience. For example, this will ensure a consistent single-click
 or double-click activation setting, and the use of standard themed
 icons.
 
-### infopage
-
-Common data files used in info page content in various applications.
-
 ### FrameworkIntegrationPlugin
 
 FrameworkIntegrationPlugin provides extra features to other KDE
