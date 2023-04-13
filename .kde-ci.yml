@@ -15,6 +15,7 @@ Dependencies:
     'frameworks/oxygen-icons5' : '@same'
     'frameworks/kpackage' : '@same'
     'frameworks/knewstuff' : '@same'
+    'third-party/appstream': '@latest'
 
 Options:
   test-before-installing: True
