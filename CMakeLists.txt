@@ -47,7 +47,7 @@ if (BUILD_KPACKAGE_INSTALL_HANDLERS)
    find_package(KF6I18n ${KF_DEP_VERSION} REQUIRED)
 
    find_package(packagekitqt6)
-   find_package(AppStreamQt 0.10.4)
+   find_package(AppStreamQt 1.0)
 endif()
 
 ecm_set_disabled_deprecation_versions(
