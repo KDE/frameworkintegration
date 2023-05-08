@@ -423,7 +423,7 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
 
     case SH_ScrollBar_LeftClickAbsolutePosition: {
         KConfigGroup g(KSharedConfig::openConfig(), "KDE");
-        return !g.readEntry("ScrollbarLeftClickNavigatesByPage", true);
+        return !g.readEntry("ScrollbarLeftClickNavigatesByPage", false);
     }
 
     default:
