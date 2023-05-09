@@ -34,7 +34,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX FRAMEWORKINTEGRATION
                   SOVERSION 6)
 
 find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
-find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
+find_package(KF6ColorScheme ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6IconThemes ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Notifications ${KF_DEP_VERSION} REQUIRED)
 

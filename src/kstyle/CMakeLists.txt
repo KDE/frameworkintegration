@@ -31,7 +31,8 @@ target_link_libraries(KF6Style
     PUBLIC
         Qt6::Widgets
     PRIVATE
-        KF6::ConfigWidgets
+        KF6::WidgetsAddons
+        KF6::ColorScheme
         KF6::IconThemes
 )
 

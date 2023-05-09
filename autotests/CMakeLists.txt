@@ -16,7 +16,7 @@ remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
 macro(FRAMEWORKINTEGRATION_TESTS _testname)
     ecm_add_test(${_testname}.cpp ${ARGN}
-                 LINK_LIBRARIES Qt6::Test KF6::ConfigWidgets KF6::ConfigCore KF6::IconThemes KF6::Style KF6::Notifications
+                 LINK_LIBRARIES Qt6::Test KF6::ConfigCore KF6::IconThemes KF6::Style KF6::Notifications
                  TEST_NAME ${_testname}
                  NAME_PREFIX "frameworkintegration-")
     set_target_properties(${_testname} PROPERTIES COMPILE_FLAGS "-DUNIT_TEST")

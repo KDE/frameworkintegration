@@ -8,6 +8,7 @@ Dependencies:
     'frameworks/kconfigwidgets' : '@same'
     'frameworks/kitemviews' : '@same'
     'frameworks/kconfig' : '@same'
+    'frameworks/kcolorscheme' : '@same'
     'frameworks/kiconthemes' : '@same'
     'frameworks/knotifications' : '@same'
     'frameworks/ki18n' : '@same'
