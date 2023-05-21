@@ -482,6 +482,7 @@ Sound=Oxygen-Sys-List-Match-Multiple.ogg
 [Event/fatalerror]
 Name=Fatal Error
 Name[ar]=خطأ فادح
+Name[ast]=Error fatal
 Name[az]=Ciddi Xəta
 Name[bg]=Фатална грешка
 Name[bs]=Kobna greška
@@ -803,6 +804,7 @@ Sound=Oxygen-Sys-App-Error.ogg
 [Event/catastrophe]
 Name=Catastrophe
 Name[ar]=كارثة
+Name[ast]=Castástrofe
 Name[az]=Fəlakət
 Name[bg]=Срив
 Name[bs]=Katastrofa
@@ -1438,6 +1440,7 @@ Sound=Oxygen-Sys-Error-Printing.ogg
 [Event/messageInformation]
 Name=Information Message
 Name[ar]=رسالة معلومات
+Name[ast]=Mensaxe d'información
 Name[az]=Məlumat Mesajı
 Name[bg]=Информативно съобщение
 Name[bs]=Informativna poruka
@@ -1652,6 +1655,7 @@ Action=Sound|Taskbar
 [Event/messageCritical]
 Name=Critical Message
 Name[ar]=رسالة حرجة
+Name[ast]=Mensaxe críticu
 Name[az]=Kritik Mesaj
 Name[bg]=Критично съобщение
 Name[bs]=Kritična poruka
@@ -1759,6 +1763,7 @@ Action=Sound|Taskbar
 [Event/messageboxQuestion]
 Name=Question
 Name[ar]=سؤال
+Name[ast]=Entruga
 Name[az]=Sual
 Name[bg]=Въпрос
 Name[bs]=Pitanje
