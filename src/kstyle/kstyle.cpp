@@ -455,3 +455,5 @@ int KStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const QW
 
     return QCommonStyle::pixelMetric(metric, option, widget);
 }
+
+#include "moc_kstyle.cpp"

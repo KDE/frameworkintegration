@@ -120,3 +120,5 @@ void KFrameworkIntegrationPlugin::reparseConfiguration()
 {
     KSharedConfig::openConfig()->reparseConfiguration();
 }
+
+#include "moc_frameworkintegrationplugin.cpp"
