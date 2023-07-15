@@ -2180,3 +2180,14 @@ Comment[zh_CN]=一个挂件已被删除
 Comment[zh_TW]=元件已被刪除
 Action=Popup
 
+[Event/deviceAdded]
+Name=Device plugged in
+Comment=A device was plugged in
+Action=Sound
+Sound=device-added
+
+[Event/deviceRemoved]
+Name=Device unplugged
+Comment=A device was unplugged
+Action=Sound
+Sound=device-removed
