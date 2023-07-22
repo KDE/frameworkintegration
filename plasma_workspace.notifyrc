@@ -159,7 +159,7 @@ Comment[x-test]=xxThe trash has been emptiedxx
 Comment[zh_CN]=回收站已经被清空
 Comment[zh_TW]=垃圾桶已被清空
 Action=Sound
-Sound=Oxygen-Sys-Trash-Emptied.ogg
+Sound=trash-empty
 
 [Event/Textcompletion: rotation]
 Name=Textcompletion: Rotation
@@ -265,7 +265,7 @@ Comment[x-test]=xxThe end of the list of matches has been reachedxx
 Comment[zh_CN]=已经到达匹配列表的末尾
 Comment[zh_TW]=到達符合清單的尾端
 Action=
-Sound=Oxygen-Sys-List-End.ogg
+Sound=completion-rotation
 
 [Event/Textcompletion: no match]
 Name=Textcompletion: No Match
@@ -371,7 +371,7 @@ Comment[x-test]=xxNo matching completion was foundxx
 Comment[zh_CN]=没有找到匹配的补全项
 Comment[zh_TW]=找不到符合的補完清單
 Action=
-Sound=Oxygen-Sys-List-Match-No.ogg
+Sound=completion-fail
 
 [Event/Textcompletion: partial match]
 Name=Textcompletion: Partial Match
@@ -477,7 +477,7 @@ Comment[x-test]=xxThere is more than one possible matchxx
 Comment[zh_CN]=找到多个可能的匹配
 Comment[zh_TW]=有一個以上符合
 Action=
-Sound=Oxygen-Sys-List-Match-Multiple.ogg
+Sound=completion-success
 
 [Event/fatalerror]
 Name=Fatal Error
@@ -585,7 +585,7 @@ Comment[x-test]=xxThere was a serious error causing the program to exitxx
 Comment[zh_CN]=发生严重错误导致程序退出
 Comment[zh_TW]=程式發生了嚴重錯誤，必須離開
 Action=Popup|Sound
-Sound=Oxygen-Sys-App-Error-Serious.ogg
+Sound=dialog-error-serious
 
 
 [Event/notification]
@@ -799,7 +799,7 @@ Comment[x-test]=xxThere was an error in the program which may cause problemsxx
 Comment[zh_CN]=程序发生了错误，它可能导致一些问题
 Comment[zh_TW]=程式中發生錯誤，可能造成問題
 Action=Popup|Sound
-Sound=Oxygen-Sys-App-Error.ogg
+Sound=dialog-error
 
 [Event/catastrophe]
 Name=Catastrophe
@@ -906,7 +906,7 @@ Comment[x-test]=xxA very serious error occurred, at least causing the program to
 Comment[zh_CN]=发生了一个非常严重的错误，至少导致程序退出
 Comment[zh_TW]=發生了非常嚴重的問題，至少造成程式被迫結束
 Action=Popup|Sound
-Sound=Oxygen-Sys-App-Error-Serious.ogg
+Sound=dialog-error-serious
 
 [Event/applicationcrash]
 Name=Application Crash
@@ -1113,7 +1113,7 @@ Comment[x-test]=xxA new session is startingxx
 Comment[zh_CN]=正在启动新会话
 Comment[zh_TW]=新的工作階段啟動中
 Action=
-Sound=Oxygen-Sys-Log-In-Short.ogg
+Sound=desktop-login
 
 [Event/exitkde]
 Name=Logout
@@ -1221,7 +1221,7 @@ Comment[x-test]=xxSession is exitingxx
 Comment[zh_CN]=会话正在退出
 Comment[zh_TW]=工作階段結束中
 Action=
-Sound=Oxygen-Sys-Log-Out.ogg
+Sound=desktop-logout
 
 [Event/cancellogout]
 Name=Logout Canceled
@@ -1435,7 +1435,7 @@ Comment[x-test]=xxA print error has occurredxx
 Comment[zh_CN]=发生了打印错误
 Comment[zh_TW]=發生了列印錯誤
 Action=Popup|Sound
-Sound=Oxygen-Sys-Error-Printing.ogg
+Sound=dialog-error
 
 [Event/messageInformation]
 Name=Information Message
@@ -1542,7 +1542,7 @@ Comment[uk]=Показане інформаційне повідомлення
 Comment[x-test]=xxAn information message is being shownxx
 Comment[zh_CN]=正在显示一条信息消息
 Comment[zh_TW]=將顯示資訊訊息
-Sound=Oxygen-Sys-App-Message.ogg
+Sound=dialog-information
 Action=Sound|Taskbar
 
 [Event/messageWarning]
@@ -1649,7 +1649,7 @@ Comment[uk]=Показане попередження
 Comment[x-test]=xxA warning message is being shownxx
 Comment[zh_CN]=正在显示一条警告消息
 Comment[zh_TW]=將顯示警告訊息
-Sound=Oxygen-Sys-Warning.ogg
+Sound=dialog-warning
 Action=Sound|Taskbar
 
 [Event/messageCritical]
@@ -1757,7 +1757,7 @@ Comment[uk]=Показано критичне повідомлення
 Comment[x-test]=xxA critical message is being shownxx
 Comment[zh_CN]=正在显示一条关键消息
 Comment[zh_TW]=將顯示嚴重訊息
-Sound=Oxygen-Sys-App-Error-Critical.ogg
+Sound=dialog-error-critical
 Action=Sound|Taskbar
 
 [Event/messageboxQuestion]
@@ -1865,7 +1865,7 @@ Comment[uk]=Задане питання
 Comment[x-test]=xxA question is being askedxx
 Comment[zh_CN]=程序正在提出一个问题
 Comment[zh_TW]=將詢問使用者問題
-Sound=Oxygen-Sys-Question.ogg
+Sound=dialog-question
 Action=Sound|Taskbar
 
 
@@ -1974,7 +1974,7 @@ Comment[x-test]=xxSound bellxx
 Comment[zh_CN]=系统声音提示
 Comment[zh_TW]=音效鈴聲
 Action=Sound
-Sound=Oxygen-Sys-App-Message.ogg
+Sound=bell-window-system
 
 [Event/plasmoidInstallationFailed]
 Name=Widget failed to install
