@@ -114,24 +114,32 @@ int main(int argc, char **argv)
         switch (question->questionType()) {
         case KNSCore::Question::YesNoQuestion: {
             auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
-            f->setActions({i18n("Yes"), i18n("No")});
-            QObject::connect(f, &KNotification::action1Activated, question, [question]() {
+
+            auto *yes = f->addAction(i18n("Yes"));
+            QObject::connect(yes, &KNotificationAction::activated, question, [question] {
                 question->setResponse(KNSCore::Question::YesResponse);
             });
-            QObject::connect(f, &KNotification::action2Activated, question, [question]() {
+
+            auto *no = f->addAction(i18n("Yes"));
+            QObject::connect(no, &KNotificationAction::activated, question, [question] {
                 question->setResponse(KNSCore::Question::NoResponse);
             });
+
             QObject::connect(f, &KNotification::closed, question, discardQuestion);
         } break;
         case KNSCore::Question::ContinueCancelQuestion: {
             auto f = KNotification::event(KNotification::StandardEvent::Notification, question->title(), question->question());
-            f->setActions({i18n("Continue"), i18n("Cancel")});
-            QObject::connect(f, &KNotification::action1Activated, question, [question]() {
+
+            auto *continueAction = f->addAction(i18n("Continue"));
+            QObject::connect(continueAction, &KNotificationAction::activated, question, [question]() {
                 question->setResponse(KNSCore::Question::ContinueResponse);
             });
-            QObject::connect(f, &KNotification::action2Activated, question, [question]() {
+
+            auto *cancelAction = f->addAction(i18n("Cancel"));
+            QObject::connect(cancelAction, &KNotificationAction::activated, question, [question]() {
                 question->setResponse(KNSCore::Question::CancelResponse);
             });
+
             QObject::connect(f, &KNotification::closed, question, discardQuestion);
         } break;
         case KNSCore::Question::InputTextQuestion:
