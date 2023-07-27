@@ -1760,7 +1760,7 @@ Comment[zh_TW]=將顯示嚴重訊息
 Sound=dialog-error-critical
 Action=Sound|Taskbar
 
-[Event/messageboxQuestion]
+[Event/messageQuestion]
 Name=Question
 Name[ar]=سؤال
 Name[ast]=Entruga
