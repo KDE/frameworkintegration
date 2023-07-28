@@ -2182,6 +2182,7 @@ Action=Popup
 
 [Event/deviceAdded]
 Name=Device plugged in
+Name[bg]=Включено устройство
 Name[ca]=Dispositiu endollat
 Name[ca@valencia]=Dispositiu connectat
 Name[de]=Gerät angeschlossen
@@ -2199,6 +2200,7 @@ Name[uk]=З'єднано пристрій
 Name[x-test]=xxDevice plugged inxx
 Name[zh_CN]=设备已插入
 Comment=A device was plugged in
+Comment[bg]=Включено е устройство
 Comment[ca]=S'ha endollat un dispositiu
 Comment[ca@valencia]=S'ha connectat un dispositiu
 Comment[de]=Ein Gerät ist angeschlossen worden
@@ -2220,6 +2222,7 @@ Sound=device-added
 
 [Event/deviceRemoved]
 Name=Device unplugged
+Name[bg]=Изключено устройство
 Name[ca]=Dispositiu desendollat
 Name[ca@valencia]=Dispositiu desconnectat
 Name[de]=Gerät vom Rechner getrennt
@@ -2237,6 +2240,7 @@ Name[uk]=Пристрій від'єднано
 Name[x-test]=xxDevice unpluggedxx
 Name[zh_CN]=设备已拔出
 Comment=A device was unplugged
+Comment[bg]=Устройство е изключено
 Comment[ca]=S'ha desendollat un dispositiu
 Comment[ca@valencia]=S'ha desconnectat un dispositiu
 Comment[de]=Ein Gerät ist vom Rechner getrennt worden
