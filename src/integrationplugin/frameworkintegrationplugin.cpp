@@ -88,7 +88,7 @@ void KMessageBoxDontAskAgainConfigStorage::enableMessage(const QString &dontShow
     config->sync();
 }
 
-void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget *parent)
+void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, const QString &message, QWidget * /*parent*/)
 {
     QString messageType;
     switch (notificationType) {
@@ -106,7 +106,7 @@ void KMessageBoxNotify::sendNotification(QMessageBox::Icon notificationType, con
         break;
     }
 
-    KNotification::event(messageType, message, QPixmap(), parent, KNotification::DefaultEvent | KNotification::CloseOnTimeout);
+    KNotification::event(messageType, message, QPixmap(), KNotification::DefaultEvent | KNotification::CloseOnTimeout);
 }
 
 KFrameworkIntegrationPlugin::KFrameworkIntegrationPlugin()
