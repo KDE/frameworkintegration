@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     Pool pool;
     auto b = pool.load();
     Q_ASSERT(b);
-    const auto components = pool.componentsById(componentName);
+    const auto components = pool.componentsById(componentName).toList();
     if (components.isEmpty()) {
         qWarning() << "couldn't find" << componentName;
         return 1;
