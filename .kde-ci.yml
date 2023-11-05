@@ -13,7 +13,7 @@ Dependencies:
     'frameworks/knotifications' : '@same'
     'frameworks/ki18n' : '@same'
     'frameworks/kio' : '@same'
-    'frameworks/oxygen-icons5' : '@same'
+    'frameworks/oxygen-icons' : '@same'
     'frameworks/kpackage' : '@same'
     'frameworks/knewstuff' : '@same'
     'third-party/appstream': '@latest'
