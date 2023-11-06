@@ -371,7 +371,7 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
     switch (hint) {
     case SH_DialogButtonBox_ButtonsHaveIcons: {
         // was KGlobalSettings::showIconsOnPushButtons() :
-        KConfigGroup g(KSharedConfig::openConfig(), "KDE");
+        KConfigGroup g(KSharedConfig::openConfig(), QStringLiteral("KDE"));
         return g.readEntry("ShowIconsOnPushButtons", true);
     }
 
@@ -379,7 +379,7 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         return true;
 
     case SH_Widget_Animate: {
-        KConfigGroup g(KSharedConfig::openConfig(), "KDE-Global GUI Settings");
+        KConfigGroup g(KSharedConfig::openConfig(), QStringLiteral("KDE-Global GUI Settings"));
         return g.readEntry("GraphicEffectsLevel", true);
     }
 
@@ -387,7 +387,7 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         return 300;
 
     case SH_ToolButtonStyle: {
-        KConfigGroup g(KSharedConfig::openConfig(), "Toolbar style");
+        KConfigGroup g(KSharedConfig::openConfig(), QStringLiteral("Toolbar style"));
 
         bool useOthertoolbars = false;
         const QWidget *parent = widget ? widget->parentWidget() : nullptr;
@@ -422,7 +422,7 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         return d->styleElements.value(widget->objectName(), 0);
 
     case SH_ScrollBar_LeftClickAbsolutePosition: {
-        KConfigGroup g(KSharedConfig::openConfig(), "KDE");
+        KConfigGroup g(KSharedConfig::openConfig(), QStringLiteral("KDE"));
         return !g.readEntry("ScrollbarLeftClickNavigatesByPage", false);
     }
 

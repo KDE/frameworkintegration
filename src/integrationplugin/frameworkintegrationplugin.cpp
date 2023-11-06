@@ -15,7 +15,7 @@
 
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownTwoActions(const QString &dontShowAgainName, KMessageBox::ButtonCode &result)
 {
-    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), QStringLiteral("Notification Messages"));
     const QString dontAsk = cg.readEntry(dontShowAgainName, QString()).toLower();
     if (dontAsk == QLatin1String("yes") || dontAsk == QLatin1String("true")) {
         result = KMessageBox::PrimaryAction;
@@ -30,7 +30,7 @@ bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownTwoActions(const QString
 
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownContinue(const QString &dontShowAgainName)
 {
-    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), QStringLiteral("Notification Messages"));
     return cg.readEntry(dontShowAgainName, true);
 }
 
@@ -40,7 +40,7 @@ void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainTwoActions(const QSt
     if (dontShowAgainName[0] == QLatin1Char(':')) {
         flags |= KConfigGroup::Global;
     }
-    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), QStringLiteral("Notification Messages"));
     cg.writeEntry(dontShowAgainName, result == KMessageBox::PrimaryAction, flags);
     cg.sync();
 }
@@ -51,7 +51,7 @@ void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainContinue(const QStri
     if (dontShowAgainName[0] == QLatin1Char(':')) {
         flags |= KConfigGroup::Global;
     }
-    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), "Notification Messages");
+    KConfigGroup cg(KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data(), QStringLiteral("Notification Messages"));
     cg.writeEntry(dontShowAgainName, false, flags);
     cg.sync();
 }
@@ -59,11 +59,11 @@ void KMessageBoxDontAskAgainConfigStorage::saveDontShowAgainContinue(const QStri
 void KMessageBoxDontAskAgainConfigStorage::enableAllMessages()
 {
     KConfig *config = KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data();
-    if (!config->hasGroup("Notification Messages")) {
+    if (!config->hasGroup(QStringLiteral("Notification Messages"))) {
         return;
     }
 
-    KConfigGroup cg(config, "Notification Messages");
+    KConfigGroup cg(config, QStringLiteral("Notification Messages"));
 
     typedef QMap<QString, QString> configMap;
 
@@ -78,11 +78,11 @@ void KMessageBoxDontAskAgainConfigStorage::enableAllMessages()
 void KMessageBoxDontAskAgainConfigStorage::enableMessage(const QString &dontShowAgainName)
 {
     KConfig *config = KMessageBox_againConfig ? KMessageBox_againConfig : KSharedConfig::openConfig().data();
-    if (!config->hasGroup("Notification Messages")) {
+    if (!config->hasGroup(QStringLiteral("Notification Messages"))) {
         return;
     }
 
-    KConfigGroup cg(config, "Notification Messages");
+    KConfigGroup cg(config, QStringLiteral("Notification Messages"));
 
     cg.deleteEntry(dontShowAgainName);
     config->sync();
