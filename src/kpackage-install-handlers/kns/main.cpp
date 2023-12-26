@@ -154,10 +154,11 @@ int main(int argc, char **argv)
         qWarning() << "kns error:" << errorCode << message << metadata;
         QCoreApplication::exit(1);
     };
-    const auto onEntriesLoded = [providerid, linkid, &installedCount, &engine, onError](const KNSCore::Entry::List list) {
-        if (list.size() != 1) {
-            qWarning() << "Found" << list << "entries, expected exactly one";
-        }
+
+    bool entryWasFound = false;
+    const auto onEntriesLoded = [providerid, linkid, &installedCount, &engine, &entryWasFound, onError](const KNSCore::Entry::List list) {
+        Q_ASSERT(list.size() == 1);
+        entryWasFound = true;
         const auto entry = list.first();
         if (providerid != entry.providerId()) {
             qWarning() << "Wrong provider" << providerid << "instead of" << entry.providerId();
@@ -182,11 +183,17 @@ int main(int argc, char **argv)
             QCoreApplication::exit(0);
         }
     };
-    QObject::connect(&engine, &KNSCore::EngineBase::signalProvidersLoaded, &engine, [&engine, &entryid, onEntriesLoded]() {
+    QObject::connect(&engine, &KNSCore::EngineBase::signalProvidersLoaded, &engine, [&engine, &entryid, onEntriesLoded, &entryWasFound]() {
         qWarning() << "providers are loaded";
         KNSCore::Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, entryid, QStringList{}, 0);
         KNSCore::ResultsStream *results = engine.search(request);
         QObject::connect(results, &KNSCore::ResultsStream::entriesFound, &engine, onEntriesLoded);
+        QObject::connect(results, &KNSCore::ResultsStream::finished, &engine, [&entryWasFound, &entryid]() {
+            if (!entryWasFound) {
+                qWarning() << "Entry with id" << entryid << "could not be found";
+                QCoreApplication::exit(1);
+            }
+        });
         results->fetch();
     });
 
