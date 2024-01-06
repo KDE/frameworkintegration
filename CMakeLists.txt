@@ -37,12 +37,12 @@ find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ColorScheme ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6IconThemes ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Notifications ${KF_DEP_VERSION} REQUIRED)
+find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 
 
 option(BUILD_KPACKAGE_INSTALL_HANDLERS "Build the KPackage install handler binaries (recommended)" ON)
 if (BUILD_KPACKAGE_INSTALL_HANDLERS)
    find_package(KF6NewStuffCore ${KF_DEP_VERSION} REQUIRED)
-   find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
    find_package(KF6Package ${KF_DEP_VERSION} REQUIRED)
    find_package(KF6I18n ${KF_DEP_VERSION} REQUIRED)
 
