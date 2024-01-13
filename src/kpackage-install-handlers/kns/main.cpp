@@ -159,8 +159,8 @@ int main(int argc, char **argv)
             qWarning() << "Found" << list << "entries, expected exactly one";
         }
         const auto entry = list.first();
-        if (providerid != QUrl(entry.providerId()).host()) {
-            qWarning() << "Wrong provider" << providerid << "instead of" << QUrl(entry.providerId()).host();
+        if (providerid != entry.providerId()) {
+            qWarning() << "Wrong provider" << providerid << "instead of" << entry.providerId();
             QCoreApplication::exit(1);
         } else if (entry.status() == KNSCore::Entry::Downloadable) {
             qDebug() << "installing...";
