@@ -150,7 +150,7 @@ int main(int argc, char **argv)
         }
     });
 
-    const auto onError = [](KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata) {
+    const auto onError = [](KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata) {
         qWarning() << "kns error:" << errorCode << message << metadata;
         QCoreApplication::exit(1);
     };
