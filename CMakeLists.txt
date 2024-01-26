@@ -82,6 +82,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/frameworkintegration_version.h
 install(FILES plasma_workspace.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 
 
-feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
+include(ECMFeatureSummary)
+ecm_feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
