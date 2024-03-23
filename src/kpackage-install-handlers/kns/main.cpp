@@ -120,7 +120,7 @@ int main(int argc, char **argv)
                 question->setResponse(KNSCore::Question::YesResponse);
             });
 
-            auto *no = f->addAction(i18n("Yes"));
+            auto *no = f->addAction(i18n("No"));
             QObject::connect(no, &KNotificationAction::activated, question, [question] {
                 question->setResponse(KNSCore::Question::NoResponse);
             });
