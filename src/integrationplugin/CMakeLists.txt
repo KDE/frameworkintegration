@@ -5,7 +5,6 @@ add_library(FrameworkIntegrationPlugin
 target_link_libraries(FrameworkIntegrationPlugin
     PRIVATE
         KF6::WidgetsAddons
-        KF6::ConfigCore
         KF6::Notifications
 )
 
