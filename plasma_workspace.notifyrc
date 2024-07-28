@@ -1,6 +1,18 @@
 [Global]
 IconName=start-here-kde-plasma
 Comment=System Notifications
+Comment[bg]=Системни известия
+Comment[ca]=Notificacions del sistema
+Comment[eo]=Sistemsciigoj
+Comment[es]=Notificaciones del sistema
+Comment[he]=התראות מערכת
+Comment[ka]=სისტემური შეტყობინებები
+Comment[nl]=Systeemmeldingen
+Comment[sl]=Sistemska obvestila
+Comment[sv]=Systemunderrättelser
+Comment[tr]=Sistem Bildirimleri
+Comment[uk]=Системні сповіщення
+Comment[x-test]=xxSystem Notificationsxx
 
 [Event/Trash: emptied]
 Name=Trash: Emptied
