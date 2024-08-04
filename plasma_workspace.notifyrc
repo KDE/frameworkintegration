@@ -5,6 +5,7 @@ Comment[ar]=إخطارات النّظام
 Comment[bg]=Системни известия
 Comment[ca]=Notificacions del sistema
 Comment[ca@valencia]=Notificacions del sistema
+Comment[en_GB]=System Notifications
 Comment[eo]=Sistemsciigoj
 Comment[es]=Notificaciones del sistema
 Comment[eu]=Sistemaren jakinarazpenak
@@ -22,6 +23,7 @@ Comment[tr]=Sistem Bildirimleri
 Comment[uk]=Системні сповіщення
 Comment[x-test]=xxSystem Notificationsxx
 Comment[zh_CN]=系统通知
+Comment[zh_TW]=系統通知
 
 [Event/Trash: emptied]
 Name=Trash: Emptied
