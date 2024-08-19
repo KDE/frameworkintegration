@@ -124,14 +124,14 @@ protected:
 public:
     //@{
     int pixelMetric(PixelMetric m, const QStyleOption *opt = nullptr, const QWidget *widget = nullptr) const override;
-    virtual int styleHint(StyleHint hint, const QStyleOption *opt, const QWidget *w, QStyleHintReturn *returnData) const override;
+    int styleHint(StyleHint hint, const QStyleOption *opt, const QWidget *w, QStyleHintReturn *returnData) const override;
 
     void polish(QWidget *) override;
     using QCommonStyle::polish; //! needed to avoid warnings at compilation time
 
     QPalette standardPalette() const override;
 
-    virtual QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const override;
+    QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const override;
     //@}
 private:
     KStylePrivate *const d;
