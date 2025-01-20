@@ -166,7 +166,7 @@ int main(int argc, char **argv)
         } else if (entry.status() == KNSCore::Entry::Downloadable) {
             qDebug() << "installing...";
             installedCount++;
-            auto transaction = KNSCore::Transaction::install(&engine, entry, linkid);
+            auto transaction = KNSCore::Transaction::installLinkId(&engine, entry, linkid);
             QObject::connect(transaction, &KNSCore::Transaction::signalErrorCode, onError);
             QObject::connect(transaction, &KNSCore::Transaction::signalEntryEvent, [&installedCount](auto entry, auto event) {
                 if (event == KNSCore::Entry::StatusChangedEvent) {
@@ -185,7 +185,7 @@ int main(int argc, char **argv)
     };
     QObject::connect(&engine, &KNSCore::EngineBase::signalProvidersLoaded, &engine, [&engine, &entryid, onEntriesLoded, &entryWasFound]() {
         qWarning() << "providers are loaded";
-        KNSCore::Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, entryid, QStringList{}, 0);
+        KNSCore::SearchRequest request(KNSCore::SortMode::Newest, KNSCore::Filter::ExactEntryId, entryid, QStringList{}, 0);
         KNSCore::ResultsStream *results = engine.search(request);
         QObject::connect(results, &KNSCore::ResultsStream::entriesFound, &engine, onEntriesLoded);
         QObject::connect(results, &KNSCore::ResultsStream::finished, &engine, [&entryWasFound, &entryid]() {
