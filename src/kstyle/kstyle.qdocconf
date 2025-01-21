@@ -1,0 +1,30 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KStyle
+description = Integration of Qt application with KDE workspaces
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    kde \
+    qtcore \
+    qtwidgets
+
+qhp.projects            = KStyle
+
+qhp.KStyle.file                = kstyle.qhp
+qhp.KStyle.namespace           = org.kde.kstyle.$QT_VERSION_TAG
+qhp.KStyle.virtualFolder       = kstyle
+qhp.KStyle.indexTitle          = KStyle
+qhp.KStyle.indexRoot           =
+
+qhp.KStyle.subprojects         = classes
+qhp.KStyle.subprojects.classes.title = C++ Classes
+qhp.KStyle.subprojects.classes.indexTitle = KStyle C++ Classes
+qhp.KStyle.subprojects.classes.selectors = class fake:headerfile
+qhp.KStyle.subprojects.classes.sortPages = true
