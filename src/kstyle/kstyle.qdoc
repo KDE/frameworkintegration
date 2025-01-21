@@ -1,0 +1,12 @@
+/*!
+    \module KStyle
+    \title KStyle C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent FrameworkIntegration
+    \cmaketargetitem KF6::Style
+
+    \brief Provides Stuff.
+
+    Stuff
+*/

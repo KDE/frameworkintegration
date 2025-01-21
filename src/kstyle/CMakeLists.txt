@@ -42,6 +42,8 @@ ecm_generate_headers(KStyle_HEADERS
   REQUIRED_HEADERS KStyle_HEADERS
 )
 
+ecm_generate_qdoc(KF6Style kstyle.qdocconf)
+
 install(TARGETS KF6Style
         EXPORT KF6FrameworkIntegrationTargets
         ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
