@@ -1,0 +1,19 @@
+/*!
+    \module KStyle
+    \title KStyle C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent FrameworkIntegration
+    \cmaketargetitem KF6::Style
+
+    \brief Integration of Qt application with KDE workspaces.
+
+    Provides integration with KDE Plasma Workspace
+    settings for Qt styles.
+
+    Derive your Qt style from KStyle to automatically inherit various
+    settings from the KDE Plasma Workspace, providing a consistent user
+    experience. For example, this will ensure a consistent single-click
+    or double-click activation setting, and the use of standard themed
+    icons.
+*/
