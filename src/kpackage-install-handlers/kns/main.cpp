@@ -33,6 +33,8 @@
  * which links the old cache file to the new cache file, which is exposed on the GUI.
  * This way users can again remove window decorations that are installed as a dependency of a global theme.
  * BUG: 414570
+ *
+ * TODO: knsrc aliases can be specified now, drop this workaround some time later.
  */
 void createSymlinkForWindowDecorations()
 {
