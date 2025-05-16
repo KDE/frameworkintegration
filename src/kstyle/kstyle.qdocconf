@@ -15,6 +15,8 @@ depends += \
     qtcore \
     qtwidgets
 
+navigation.landingpage  = "FrameworkIntegration"
+
 qhp.projects            = KStyle
 
 qhp.KStyle.file                = kstyle.qhp
