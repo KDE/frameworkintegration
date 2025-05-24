@@ -30,3 +30,5 @@ qhp.KStyle.subprojects.classes.title = C++ Classes
 qhp.KStyle.subprojects.classes.indexTitle = KStyle C++ Classes
 qhp.KStyle.subprojects.classes.selectors = class fake:headerfile
 qhp.KStyle.subprojects.classes.sortPages = true
+
+tagfile = kstyle.tags
