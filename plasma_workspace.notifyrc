@@ -2382,6 +2382,7 @@ Comment[zh_CN]=已插入一个设备
 Comment[zh_TW]=有裝置剛被插入
 Action=Sound
 Sound=device-added
+Urgency=Low
 
 [Event/deviceRemoved]
 Name=Device unplugged
@@ -2466,3 +2467,4 @@ Comment[zh_CN]=已拔出一个设备
 Comment[zh_TW]=有裝置剛被拔出
 Action=Sound
 Sound=device-removed
+Urgency=Low
