@@ -2380,7 +2380,7 @@ Comment[uk]=Було з'єднано пристрій
 Comment[x-test]=xxA device was plugged inxx
 Comment[zh_CN]=已插入一个设备
 Comment[zh_TW]=有裝置剛被插入
-Action=Sound
+Action=Popup|Sound
 Sound=device-added
 Urgency=Low
 
@@ -2465,6 +2465,6 @@ Comment[uk]=Було від'єднано пристрій
 Comment[x-test]=xxA device was unpluggedxx
 Comment[zh_CN]=已拔出一个设备
 Comment[zh_TW]=有裝置剛被拔出
-Action=Sound
+Action=Popup|Sound
 Sound=device-removed
 Urgency=Low
