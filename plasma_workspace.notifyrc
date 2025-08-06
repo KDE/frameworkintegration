@@ -606,7 +606,7 @@ Sound=dialog-error-serious
 
 [Event/notification]
 Name=Notification
-Name[ar]=إخطار
+Name[ar]=إشعار
 Name[ast]=Avisu
 Name[az]=Bildiriş
 Name[bg]=Известие
