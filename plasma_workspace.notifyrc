@@ -589,7 +589,7 @@ Sound=Oxygen-Sys-App-Error-Serious.ogg
 
 [Event/notification]
 Name=Notification
-Name[ar]=إخطار
+Name[ar]=إشعار
 Name[az]=Bildiriş
 Name[bg]=Известие
 Name[bs]=Obavještenje
