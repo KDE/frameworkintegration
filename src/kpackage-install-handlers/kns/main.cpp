@@ -51,8 +51,9 @@ void createSymlinkForWindowDecorations()
     QFile file(newFileInfo.absoluteFilePath());
     // Make sure that the file exists
     if (!newFileInfo.exists()) {
-        file.open(QFile::WriteOnly);
-        file.close();
+        if (file.open(QFile::WriteOnly)) {
+            file.close();
+        }
     }
     file.link(info.absoluteFilePath());
 }
