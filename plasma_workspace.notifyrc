@@ -981,7 +981,7 @@ Name[tg]=Вайроншавии барнома
 Name[tr]=Uygulama Çökmesi
 Name[uk]=Аварія програми
 Name[zh_CN]=应用程序崩溃
-Name[zh_TW]=應用程式當掉
+Name[zh_TW]=應用程式崩潰
 Comment=An application just closed unexpectedly
 Comment[ar]=أُغلق تطبيق ما للتو بشكل غير متوقع
 Comment[az]=Tətbiq gözlənilmədən bağlandı
@@ -2096,7 +2096,7 @@ Name[tg]=Насбкунии виҷет қатъ шуд
 Name[tr]=Araç Takımı Kurulamadı
 Name[uk]=Не вдалося встановити віджет
 Name[zh_CN]=挂件安装失败
-Name[zh_TW]=Widget 安裝失敗
+Name[zh_TW]=元件安裝失敗
 Comment=A widget could not be installed
 Comment[ar]=تعذر تثبيت أحد الودجات
 Comment[az]=Vidjet quraşdırıla bilmədi
@@ -2147,7 +2147,7 @@ Comment[tg]=Виҷет насб карда намешавад
 Comment[tr]=Bir araç takımı kurulamadı
 Comment[uk]=Не вдалося встановити віджет
 Comment[zh_CN]=无法安装挂件
-Comment[zh_TW]=Widget 無法安裝
+Comment[zh_TW]=元件無法安裝
 Action=Popup
 
 [Event/plasmoidDeleted]
