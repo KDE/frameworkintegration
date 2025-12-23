@@ -52,7 +52,7 @@ if (BUILD_KPACKAGE_INSTALL_HANDLERS)
 endif()
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.9.0
+    QT 6.11.0
     KF 6.21.0
 )
 
