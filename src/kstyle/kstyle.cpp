@@ -426,6 +426,12 @@ int KStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget 
         return !g.readEntry("ScrollbarLeftClickNavigatesByPage", false);
     }
 
+    case SH_TabBar_AllowWheelScrolling:
+    case SH_ComboBox_AllowWheelScrolling: {
+        KConfigGroup g(KSharedConfig::openConfig(), QStringLiteral("KDE"));
+        return g.readEntry("ScrollingModifiesControls", false);
+    }
+
     default:
         break;
     };
