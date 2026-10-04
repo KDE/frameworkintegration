@@ -55,8 +55,8 @@ private Q_SLOTS:
 
     void testToolButtonStyleHint()
     {
-        QToolBar *toolbar = new QToolBar();
-        QToolButton *btn = new QToolButton(toolbar);
+        auto toolbar = std::make_unique<QToolBar>();
+        QToolButton *btn = new QToolButton(toolbar.get());
 
         QCOMPARE(qApp->style()->styleHint(QStyle::SH_ToolButtonStyle, nullptr, btn), (int)Qt::ToolButtonTextOnly);
 
