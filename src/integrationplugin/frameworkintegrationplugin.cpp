@@ -11,7 +11,6 @@
 #include <KSharedConfig>
 
 #include <QDebug>
-#include <qplugin.h>
 
 bool KMessageBoxDontAskAgainConfigStorage::shouldBeShownTwoActions(const QString &dontShowAgainName, KMessageBox::ButtonCode &result)
 {
