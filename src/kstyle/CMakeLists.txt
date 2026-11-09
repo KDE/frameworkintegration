@@ -36,7 +36,7 @@ target_link_libraries(KF6Style
         KF6::IconThemes
 )
 
-ecm_generate_headers(KStyle_HEADERS
+ecm_generate_headers(KStyle_CamelCase_HEADERS
   HEADER_NAMES
     KStyle
   REQUIRED_HEADERS KStyle_HEADERS
@@ -50,6 +50,19 @@ install(TARGETS KF6Style
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kstyle_export.h
               ${KStyle_HEADERS}
+              ${KStyle_CamelCase_HEADERS}
         DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KStyle
         COMPONENT Devel)
 
+ecm_add_installed_library_check(KF6Style
+    PACKAGE_NAME "KF6FrameworkIntegration"
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6Style
+    HEADERS ${KStyle_CamelCase_HEADERS}
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KF6Style
+    PREFIX FRAMEWORKINTEGRATION
+)
